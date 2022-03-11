@@ -58,13 +58,37 @@
 			children = (
 				D27AE3B327DB626400A879C4 /* AppDelegate.swift */,
 				D27AE3B527DB626400A879C4 /* SceneDelegate.swift */,
-				D27AE3B727DB626400A879C4 /* ViewController.swift */,
-				D27AE3B927DB626400A879C4 /* Main.storyboard */,
+				D27AE3C927DB6E7600A879C4 /* Models */,
+				D27AE3C727DB6E4F00A879C4 /* Controllers */,
+				D27AE3C827DB6E6000A879C4 /* Views */,
 				D27AE3BC27DB626500A879C4 /* Assets.xcassets */,
-				D27AE3BE27DB626500A879C4 /* LaunchScreen.storyboard */,
 				D27AE3C127DB626500A879C4 /* Info.plist */,
 			);
 			path = Leandro_PokedexApp;
+			sourceTree = "<group>";
+		};
+		D27AE3C727DB6E4F00A879C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D27AE3B727DB626400A879C4 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D27AE3C827DB6E6000A879C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D27AE3BE27DB626500A879C4 /* LaunchScreen.storyboard */,
+				D27AE3B927DB626400A879C4 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D27AE3C927DB6E7600A879C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
