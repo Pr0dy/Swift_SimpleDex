@@ -5,9 +5,8 @@ class PokemonListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var pokemonManager = PokemonManager()
     var appConstants = AppStrList()
-    
-    let rows = ["001: X", "002: Y", "c", "d", "e", "f" , "g"]
-    
+    var PokemonData: PokemonModel?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -20,6 +19,7 @@ class PokemonListViewController: UIViewController {
     
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
+        
         func numberOfSections(in tableView: UITableView) -> Int {
             return 1
         }
@@ -34,6 +34,8 @@ class PokemonListViewController: UIViewController {
             
              pokemonManager.fetchPokemon(number:  indexPath.row+1)
              
+             cell.textLabel?.text = PokemonData?.name
+             
             return cell
         }
     }
@@ -41,8 +43,8 @@ class PokemonListViewController: UIViewController {
 
 extension PokemonListViewController: PokemonManagerDelegate{
     
-    func didUpdatePokemon(_ pokemonManager: PokemonManager, pokemon: PokemonModel) {
-        
+    func didUpdatePokemon(pokemon: PokemonModel) {
+        PokemonData = pokemon
     }
     
     func didFailWithError(error: Error) {

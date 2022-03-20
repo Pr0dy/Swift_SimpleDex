@@ -2,7 +2,7 @@ import Foundation
 
 protocol PokemonManagerDelegate{
     func didFailWithError(error: Error)
-    func didUpdatePokemon(_ pokemonManager: PokemonManager, pokemon: PokemonModel)
+    func didUpdatePokemon(pokemon: PokemonModel)
 }
 
 struct PokemonManager{
@@ -23,9 +23,8 @@ struct PokemonManager{
                     return
                 }
                 if let safeData = data {
-                    if let pokemon = self.parseJSON(safeData) {
-                        print(pokemon.name)
-                        //self.delegate?.didUpdatePokemon(self, weather: pokemon)
+                    if let pokemonData = self.parseJSON(safeData) {
+                        self.delegate?.didUpdatePokemon(pokemon: pokemonData)
                     }
                 }
             }
