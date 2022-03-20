@@ -1,15 +1,10 @@
-//
-//  PokemonListViewController.swift
-//  Leandro_PokedexApp
-//
-//  Created by leandro.banha on 17/03/2022.
-//
-
 import UIKit
 
 class PokemonListViewController: UIViewController {
-
+    
     @IBOutlet var tableView: UITableView!
+    var pokemonManager = PokemonManager()
+    var appConstants = AppStrList()
     
     let rows = ["001: X", "002: Y", "c", "d", "e", "f" , "g"]
     
@@ -17,6 +12,7 @@ class PokemonListViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        pokemonManager.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -25,22 +21,33 @@ class PokemonListViewController: UIViewController {
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
         func numberOfSections(in tableView: UITableView) -> Int {
-            return rows.count
+            return 1
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 1
+            return 10
         }
         
          func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath)
+             let cell = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath)
             
-             cell.textLabel?.text = rows[indexPath.section]
+             pokemonManager.fetchPokemon(number:  indexPath.row+1)
              
-            
             return cell
         }
     }
 
+
+extension PokemonListViewController: PokemonManagerDelegate{
+    
+    func didUpdatePokemon(_ pokemonManager: PokemonManager, pokemon: PokemonModel) {
+        
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+ 
+}
 
