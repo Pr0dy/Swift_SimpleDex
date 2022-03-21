@@ -1,7 +1,13 @@
 import Foundation
 
 struct PokemonModel{
-    let name: String
+    var name: String
     let number: Int
     //let default_sprite: String
+    
+    func getPokemonName() -> String{
+        let first = String(name.prefix(1).capitalized)
+        let other = String(name.dropFirst())
+        return first + other
+    }
 }

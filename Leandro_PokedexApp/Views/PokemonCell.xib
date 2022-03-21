@@ -24,13 +24,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esa-DD-tuh">
-                        <rect key="frame" x="10" y="10" width="52" height="21"/>
+                        <rect key="frame" x="10" y="10" width="75" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ste-U1-oTo">
-                        <rect key="frame" x="10" y="41" width="42" height="21"/>
+                        <rect key="frame" x="10" y="41" width="120" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                 <constraints>
                     <constraint firstItem="Ste-U1-oTo" firstAttribute="top" secondItem="Esa-DD-tuh" secondAttribute="bottom" constant="10" id="0yf-6L-FtJ"/>
                     <constraint firstItem="SwL-j1-2T7" firstAttribute="leading" secondItem="R9o-hG-5Fq" secondAttribute="trailing" constant="19" id="2yy-YP-zcN"/>
-                    <constraint firstItem="gw0-0u-dqi" firstAttribute="leading" secondItem="Ste-U1-oTo" secondAttribute="trailing" constant="168" id="6Ew-BH-5l7"/>
+                    <constraint firstItem="gw0-0u-dqi" firstAttribute="leading" secondItem="Ste-U1-oTo" secondAttribute="trailing" constant="90" id="6Ew-BH-5l7"/>
                     <constraint firstItem="R9o-hG-5Fq" firstAttribute="top" secondItem="Ste-U1-oTo" secondAttribute="bottom" constant="18" id="7GK-ZX-tkv"/>
                     <constraint firstItem="gw0-0u-dqi" firstAttribute="leading" secondItem="SwL-j1-2T7" secondAttribute="trailing" constant="71" id="GY8-Nl-ZVh"/>
                     <constraint firstItem="R9o-hG-5Fq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="HAs-zf-RIj"/>
@@ -76,7 +76,7 @@
                     <constraint firstAttribute="bottom" secondItem="R9o-hG-5Fq" secondAttribute="bottom" constant="10" id="cUW-dd-I2f"/>
                     <constraint firstItem="Ste-U1-oTo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="h0l-n5-NRo"/>
                     <constraint firstItem="SwL-j1-2T7" firstAttribute="leading" secondItem="R83-bb-XzX" secondAttribute="trailing" constant="19" id="iIl-Xm-VDQ"/>
-                    <constraint firstItem="gw0-0u-dqi" firstAttribute="leading" secondItem="Esa-DD-tuh" secondAttribute="trailing" constant="158" id="iek-8N-nYu"/>
+                    <constraint firstItem="gw0-0u-dqi" firstAttribute="leading" secondItem="Esa-DD-tuh" secondAttribute="trailing" constant="135" id="iek-8N-nYu"/>
                     <constraint firstAttribute="trailing" secondItem="gw0-0u-dqi" secondAttribute="trailing" constant="10" id="l95-Mu-X1R"/>
                     <constraint firstItem="gw0-0u-dqi" firstAttribute="leading" secondItem="R9o-hG-5Fq" secondAttribute="trailing" constant="150" id="pg0-Bk-im8"/>
                     <constraint firstItem="Esa-DD-tuh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qFT-Fi-lY7"/>

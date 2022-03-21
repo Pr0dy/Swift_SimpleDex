@@ -43,7 +43,7 @@ extension PokemonListViewController: PokemonManagerDelegate{
     
     func didUpdatePokemon(pokemon: PokemonModel) {
         DispatchQueue.main.async {
-            self.cellToDisplay?.pokemonName.text = pokemon.name
+            self.cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
             self.cellToDisplay?.pokemonNumber.text = "#\(String(pokemon.number))"
         }
     }
