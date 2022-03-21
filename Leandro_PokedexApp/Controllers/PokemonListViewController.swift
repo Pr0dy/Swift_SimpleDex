@@ -6,6 +6,7 @@ class PokemonListViewController: UIViewController {
     var pokemonManager = PokemonManager()
     var appConstants = AppStrList()
     var cellToDisplay: PokemonCell?
+    var pokemonDictList = [Int:PokemonModel]()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,19 @@ class PokemonListViewController: UIViewController {
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 10
+            return appConstants.totalPokemons
         }
         
          func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
              cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
+             
+             if pokemonDictList.keys.contains(indexPath.row+1) == false{
+                 pokemonManager.fetchPokemon(number:  indexPath.row+1)
+             } else {
+                 pokemonManager.fetchPokemon(number:  indexPath.row+1)
+             }
             
-             pokemonManager.fetchPokemon(number:  indexPath.row+1)
              
             return cellToDisplay!
         }
