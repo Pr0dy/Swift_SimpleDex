@@ -5,14 +5,13 @@ class PokemonListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var pokemonManager = PokemonManager()
     var appConstants = AppStrList()
-    var PokemonData: PokemonModel?
         
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         pokemonManager.delegate = self
-        // Do any additional setup after loading the view.
+        tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
     }
     
 }
@@ -30,11 +29,9 @@ class PokemonListViewController: UIViewController {
         
          func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-             let cell = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath)
+             let cell = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as! PokemonCell
             
              pokemonManager.fetchPokemon(number:  indexPath.row+1)
-             
-             cell.textLabel?.text = PokemonData?.name
              
             return cell
         }
@@ -44,7 +41,6 @@ class PokemonListViewController: UIViewController {
 extension PokemonListViewController: PokemonManagerDelegate{
     
     func didUpdatePokemon(pokemon: PokemonModel) {
-        PokemonData = pokemon
     }
     
     func didFailWithError(error: Error) {
