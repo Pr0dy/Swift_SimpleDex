@@ -36,7 +36,8 @@ class PokemonListViewController: UIViewController {
              if pokemonDictList.keys.contains(indexPath.row+1) == false{
                  pokemonManager.fetchPokemon(number:  indexPath.row+1)
              } else {
-                 pokemonManager.fetchPokemon(number:  indexPath.row+1)
+                 cellToDisplay?.pokemonName.text = pokemonDictList[indexPath.row+1]?.name
+                 cellToDisplay?.pokemonNumber.text = "#\(String(indexPath.row+1))"
              }
             
              
@@ -51,6 +52,7 @@ extension PokemonListViewController: PokemonManagerDelegate{
         DispatchQueue.main.async {
             self.cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
             self.cellToDisplay?.pokemonNumber.text = "#\(String(pokemon.number))"
+            self.pokemonDictList[pokemon.number] = pokemon
         }
     }
     
