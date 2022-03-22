@@ -37,8 +37,12 @@ class PokemonListViewController: UIViewController {
             
              cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
              
-             
-             cellToDisplay?.pokemonName.text = pokemonDictList[indexPath.row+1]?.getPokemonName()
+             if let pokemonName = pokemonDictList[indexPath.row+1]?.getPokemonName(){
+                 cellToDisplay?.pokemonName.text = pokemonName
+             }
+             else{
+                 cellToDisplay?.pokemonName.text = "Not loaded"
+             }
              cellToDisplay?.pokemonNumber.text = "#\(String(indexPath.row+1))"
                
              
