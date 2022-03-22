@@ -38,7 +38,7 @@ struct PokemonManager{
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(PokemonData.self, from: pokemonData)
-            let pokemon = PokemonModel(name: decodedData.name, number: pokemonNum ?? 0)
+            let pokemon = PokemonModel(name: decodedData.name, number: pokemonNum ?? 0, default_sprite: decodedData.sprites.front_default)
             return pokemon
             
         } catch {
