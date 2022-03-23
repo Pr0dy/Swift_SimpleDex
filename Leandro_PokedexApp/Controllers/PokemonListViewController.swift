@@ -40,6 +40,7 @@ class PokemonListViewController: UIViewController {
              cellToDisplay?.pokemonName.text = pokemonDictList[indexPath.row+1]?.getPokemonName()
              cellToDisplay?.pokemonNumber.text = "#\(String(indexPath.row+1))"
              cellToDisplay?.pokemonImage.image = pokemonDictList[indexPath.row+1]?.default_sprite_image
+             cellToDisplay?.backgroundColor = pokemonDictList[indexPath.row+1]?.cell_color_type
              
             return cellToDisplay!
         }
