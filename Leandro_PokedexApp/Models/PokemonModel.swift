@@ -26,6 +26,7 @@ struct PokemonModel{
             switch(main_type){
             case "fire": image = UIImage(named: "FireTypeIcon")!; break;
             case "water": image = UIImage(named: "WaterTypeIcon")!; break;
+            case "grass": image = UIImage(named: "GrassTypeIcon")!; break;
             default: image = UIImage(named: "NormalTypeIcon")!; break;
             }
             return image
