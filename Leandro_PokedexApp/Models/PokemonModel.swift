@@ -33,6 +33,14 @@ struct PokemonModel{
             case "rock": image = UIImage(named: "RockTypeIcon")!; break;
             case "bug": image = UIImage(named: "BugTypeIcon")!; break;
             case "ghost": image = UIImage(named: "GhostTypeIcon")!; break;
+            case "steel": image = UIImage(named: "StellTypeIcon")!; break;
+            case "electric": image = UIImage(named: "ElectricTypeIcon")!; break;
+            case "psychic": image = UIImage(named: "PsychicTypeIcon")!; break;
+            case "ice": image = UIImage(named: "IceTypeIcon")!; break;
+            case "dragon": image = UIImage(named: "DragonTypeIcon")!; break;
+            case "dark": image = UIImage(named: "DarkTypeIcon")!; break;
+            case "fairy": image = UIImage(named: "FairyTypeIcon")!; break;
+            case "fighting": image = UIImage(named: "FightingTypeIcon")!; break;
             default: image = UIImage(named: "NormalTypeIcon")!; break;
             }
             return image
