@@ -110,9 +110,9 @@
 		D2D446EB27E762EE002ADAB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D27AE3BC27DB626500A879C4 /* Assets.xcassets */,
 				D2D446E927E762D6002ADAB3 /* AppStrList.swift */,
 				D2C425A627E7DC3900A7F333 /* PokemonCell.swift */,
+				D27AE3BC27DB626500A879C4 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

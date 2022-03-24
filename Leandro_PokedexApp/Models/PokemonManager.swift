@@ -8,9 +8,11 @@ protocol PokemonManagerDelegate{
 struct PokemonManager{
     
     var delegate: PokemonManagerDelegate?
+    var pokemonNum: Int?
     
-    func fetchPokemon(number: Int){
+    mutating func fetchPokemon(number: Int){
         let pokemonBaseURL = "\(AppStrList().pokemonBaseURL)\(number)"
+        pokemonNum = number
         performRequest(with: pokemonBaseURL)
     }
     
@@ -36,9 +38,14 @@ struct PokemonManager{
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(PokemonData.self, from: pokemonData)
-            let pokemonName = decodedData.name
-            //let sprites = decodedData.sprites
-            let pokemon = PokemonModel(name: pokemonName /*,default_sprite: sprites.front_default*/)
+            let pokemon: PokemonModel
+            
+            if decodedData.types.count > 1{
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name)
+            } else {
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name)
+            }
+            
             return pokemon
             
         } catch {
