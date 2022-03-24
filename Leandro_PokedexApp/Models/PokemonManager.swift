@@ -38,7 +38,14 @@ struct PokemonManager{
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(PokemonData.self, from: pokemonData)
-            let pokemon = PokemonModel(name: decodedData.name, number: pokemonNum ?? 0, default_sprite: decodedData.sprites.front_default, main_type: decodedData.types[0].type!.name)
+            let pokemon: PokemonModel
+            
+            if decodedData.types.count > 1{
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name)
+            } else {
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name)
+            }
+            
             return pokemon
             
         } catch {

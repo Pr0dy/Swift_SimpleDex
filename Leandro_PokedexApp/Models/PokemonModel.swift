@@ -4,10 +4,22 @@ import UIKit
 struct PokemonModel{
     var name: String
     let number: Int
-    let default_sprite: String
-    var default_sprite_image: UIImage{
+    let defaultSprite: String
+    let mainPokemonType: String
+    let secondaryPokemonType: String?
+    
+    init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil ){
+        self.name = pokemonName
+        self.number = pokemonNumber
+        self.defaultSprite = defaultSprite
+        self.mainPokemonType = mainPokemonType
+        self.secondaryPokemonType = secondaryPokemonType
+    }
+    
+    
+    var defaultSpritImage: UIImage{
         get{
-            let imageUrl = URL(string: default_sprite)!
+            let imageUrl = URL(string: defaultSprite)!
             let imageData = try! Data(contentsOf: imageUrl)
             return UIImage(data: imageData)!
         }
@@ -18,40 +30,38 @@ struct PokemonModel{
         let other = String(name.dropFirst())
         return first + other
     }
-    
-    let main_type: String
-    //let secondaryPokemonType: String?
-    var cell_type_icon: UIImage{
-        get{
-            var image: UIImage
-            switch(main_type){
-            case "fire": image = UIImage(named: "FireTypeIcon")!; break;
-            case "water": image = UIImage(named: "WaterTypeIcon")!; break;
-            case "grass": image = UIImage(named: "GrassTypeIcon")!; break;
-            case "flying": image = UIImage(named: "FlyingTypeIcon")!; break;
-            case "poison": image = UIImage(named: "PoisonTypeIcon")!; break;
-            case "ground": image = UIImage(named: "GroundTypeIcon")!; break;
-            case "rock": image = UIImage(named: "RockTypeIcon")!; break;
-            case "bug": image = UIImage(named: "BugTypeIcon")!; break;
-            case "ghost": image = UIImage(named: "GhostTypeIcon")!; break;
-            case "steel": image = UIImage(named: "StellTypeIcon")!; break;
-            case "electric": image = UIImage(named: "ElectricTypeIcon")!; break;
-            case "psychic": image = UIImage(named: "PsychicTypeIcon")!; break;
-            case "ice": image = UIImage(named: "IceTypeIcon")!; break;
-            case "dragon": image = UIImage(named: "DragonTypeIcon")!; break;
-            case "dark": image = UIImage(named: "DarkTypeIcon")!; break;
-            case "fairy": image = UIImage(named: "FairyTypeIcon")!; break;
-            case "fighting": image = UIImage(named: "FightingTypeIcon")!; break;
-            default: image = UIImage(named: "NormalTypeIcon")!; break;
-            }
-            return image
+
+    func getCellPokemonTypeIcon(pokemonType type: String?) -> UIImage  {
+        var image: UIImage
+        switch(type){
+        case "fire": image = UIImage(named: "FireTypeIcon")!; break;
+        case "water": image = UIImage(named: "WaterTypeIcon")!; break;
+        case "grass": image = UIImage(named: "GrassTypeIcon")!; break;
+        case "flying": image = UIImage(named: "FlyingTypeIcon")!; break;
+        case "poison": image = UIImage(named: "PoisonTypeIcon")!; break;
+        case "ground": image = UIImage(named: "GroundTypeIcon")!; break;
+        case "rock": image = UIImage(named: "RockTypeIcon")!; break;
+        case "bug": image = UIImage(named: "BugTypeIcon")!; break;
+        case "ghost": image = UIImage(named: "GhostTypeIcon")!; break;
+        case "steel": image = UIImage(named: "StellTypeIcon")!; break;
+        case "electric": image = UIImage(named: "ElectricTypeIcon")!; break;
+        case "psychic": image = UIImage(named: "PsychicTypeIcon")!; break;
+        case "ice": image = UIImage(named: "IceTypeIcon")!; break;
+        case "dragon": image = UIImage(named: "DragonTypeIcon")!; break;
+        case "dark": image = UIImage(named: "DarkTypeIcon")!; break;
+        case "fairy": image = UIImage(named: "FairyTypeIcon")!; break;
+        case "fighting": image = UIImage(named: "FightingTypeIcon")!; break;
+        default: image = UIImage(named: "NormalTypeIcon")!; break;
         }
+        return image
     }
+    
+    
     var cell_color_type: UIColor{
         get{
             var color: UIColor
             
-            switch(main_type){
+            switch(mainPokemonType){
             case "normal": color = UIColor(red: CGFloat(168) / 255.0, green: CGFloat(168) / 255.0, blue: CGFloat(125) / 255.0, alpha: 1.0);break;
             case "fire": color = UIColor(red: CGFloat(242) / 255.0, green: CGFloat(171) / 255.0, blue: CGFloat(101) / 255.0, alpha: 1.0); break;
             case "water": color = UIColor(red: CGFloat(112) / 255.0, green: CGFloat(143) / 255.0, blue: CGFloat(233) / 255.0, alpha: 1.0); break;

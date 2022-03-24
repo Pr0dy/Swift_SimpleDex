@@ -15,7 +15,7 @@ struct Sprites: Codable{
 
 struct Types: Codable{
     let slot: Int
-    let type: TypeData?
+    let type: TypeData
 }
 
 struct TypeData: Codable{
