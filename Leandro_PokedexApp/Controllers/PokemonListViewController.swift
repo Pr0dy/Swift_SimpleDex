@@ -43,6 +43,7 @@ class PokemonListViewController: UIViewController {
              cellToDisplay?.backgroundColor = pokemonDictList[indexPath.row+1]?.cell_color_type
              cellToDisplay?.pokemonTypeImg1.image = pokemonDictList[indexPath.row+1]?.cell_type_icon
              
+             
             return cellToDisplay!
         }
     }

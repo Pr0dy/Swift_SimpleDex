@@ -19,6 +19,6 @@ struct Types: Codable{
 }
 
 struct TypeData: Codable{
-    let name: String?
-    let url: String?
+    let name: String
+    let url: String
 }

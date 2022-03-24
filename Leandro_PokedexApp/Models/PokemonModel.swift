@@ -20,6 +20,7 @@ struct PokemonModel{
     }
     
     let main_type: String
+    //let secondaryPokemonType: String?
     var cell_type_icon: UIImage{
         get{
             var image: UIImage
