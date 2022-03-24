@@ -30,6 +30,9 @@ struct PokemonModel{
             case "flying": image = UIImage(named: "FlyingTypeIcon")!; break;
             case "poison": image = UIImage(named: "PoisonTypeIcon")!; break;
             case "ground": image = UIImage(named: "GroundTypeIcon")!; break;
+            case "rock": image = UIImage(named: "RockTypeIcon")!; break;
+            case "bug": image = UIImage(named: "BugTypeIcon")!; break;
+            case "ghost": image = UIImage(named: "GhostTypeIcon")!; break;
             default: image = UIImage(named: "NormalTypeIcon")!; break;
             }
             return image
@@ -40,7 +43,7 @@ struct PokemonModel{
             var color: UIColor
             
             switch(main_type){
-            case "normal": color = UIColor(red: CGFloat(168) / 255.0, green: CGFloat(168) / 255.0, blue: CGFloat(125) / 255.0, alpha: 1.0); break;
+            case "normal": color = UIColor(red: CGFloat(168) / 255.0, green: CGFloat(168) / 255.0, blue: CGFloat(125) / 255.0, alpha: 1.0);break;
             case "fire": color = UIColor(red: CGFloat(242) / 255.0, green: CGFloat(171) / 255.0, blue: CGFloat(101) / 255.0, alpha: 1.0); break;
             case "water": color = UIColor(red: CGFloat(112) / 255.0, green: CGFloat(143) / 255.0, blue: CGFloat(233) / 255.0, alpha: 1.0); break;
             case "grass": color = UIColor(red: CGFloat(139) / 255.0, green: CGFloat(198) / 255.0, blue: CGFloat(96) / 255.0, alpha: 1.0); break;
