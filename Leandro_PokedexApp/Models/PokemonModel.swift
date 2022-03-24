@@ -13,7 +13,24 @@ struct PokemonModel{
         }
     }
     
+    func getPokemonName() -> String{
+        let first = String(name.prefix(1).capitalized)
+        let other = String(name.dropFirst())
+        return first + other
+    }
+    
     let main_type: String
+    var cell_type_icon: UIImage{
+        get{
+            var image: UIImage
+            switch(main_type){
+            case "fire": image = UIImage(named: "FireTypeIcon")!; break;
+            case "water": image = UIImage(named: "WaterTypeIcon")!; break;
+            default: image = UIImage(named: "NormalTypeIcon")!; break;
+            }
+            return image
+        }
+    }
     var cell_color_type: UIColor{
         get{
             var color: UIColor
@@ -41,12 +58,5 @@ struct PokemonModel{
             }
             return color
         }
-    }
-    
-    
-    func getPokemonName() -> String{
-        let first = String(name.prefix(1).capitalized)
-        let other = String(name.dropFirst())
-        return first + other
     }
 }
