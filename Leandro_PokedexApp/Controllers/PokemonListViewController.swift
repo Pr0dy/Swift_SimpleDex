@@ -43,6 +43,10 @@ class PokemonListViewController: UIViewController {
              cellToDisplay?.backgroundColor = pokemonDictList[indexPath.row+1]?.cell_color_type
              cellToDisplay?.pokemonTypeImg1.image = pokemonDictList[indexPath.row+1]?.getCellPokemonTypeIcon(pokemonType: pokemonDictList[indexPath.row+1]?.mainPokemonType)
              
+             if let secondaryType = pokemonDictList[indexPath.row+1]?.secondaryPokemonType{
+                 cellToDisplay?.pokemonTypeImg2.image =  pokemonDictList[indexPath.row+1]?.getCellPokemonTypeIcon(pokemonType:secondaryType)
+             }
+             
             return cellToDisplay!
         }
     }
