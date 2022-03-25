@@ -1,6 +1,6 @@
 import UIKit
 
-class PokemonListViewController: UIViewController {
+class PokemonListViewController: UIViewController  {
     
     @IBOutlet var tableView: UITableView!
     var pokemonManager = PokemonManager()
@@ -21,19 +21,18 @@ class PokemonListViewController: UIViewController {
     }
     
 }
-    
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
-        
-        func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return appConstants.totalPokemons
         }
         
-         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 100
+        }
+         
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
              cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
              
@@ -67,6 +66,4 @@ extension PokemonListViewController: PokemonManagerDelegate{
     func didFailWithError(error: Error) {
         print(error)
     }
- 
 }
-
