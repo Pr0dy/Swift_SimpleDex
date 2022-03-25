@@ -1,6 +1,6 @@
 import UIKit
 
-class PokemonListViewController: UIViewController {
+class PokemonListViewController: UIViewController  {
     
     @IBOutlet var tableView: UITableView!
     var pokemonManager = PokemonManager()
