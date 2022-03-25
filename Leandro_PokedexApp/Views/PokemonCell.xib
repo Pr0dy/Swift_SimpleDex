@@ -20,13 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="186" height="125"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edd-qs-jCh">
-                                <rect key="frame" x="15" y="23" width="41.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMu-AS-TpW">
-                                <rect key="frame" x="15" y="77" width="41.5" height="21"/>
+                                <rect key="frame" x="15" y="24" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,17 +44,23 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z66-O1-jkB">
+                                <rect key="frame" x="15" y="52" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="UMu-AS-TpW" firstAttribute="top" secondItem="edd-qs-jCh" secondAttribute="bottom" constant="33" id="EtB-8k-PJU"/>
-                            <constraint firstItem="edd-qs-jCh" firstAttribute="leading" secondItem="5H5-5r-NMy" secondAttribute="leading" constant="15" id="PdM-uY-Zcg"/>
+                            <constraint firstItem="z66-O1-jkB" firstAttribute="top" secondItem="edd-qs-jCh" secondAttribute="bottom" constant="7.5" id="ENb-2v-NdD"/>
                             <constraint firstAttribute="bottom" secondItem="RZm-b0-ldD" secondAttribute="bottom" constant="30" id="Rkx-lh-zdH"/>
-                            <constraint firstAttribute="bottom" secondItem="edd-qs-jCh" secondAttribute="bottom" constant="81" id="ZNR-T4-x4q"/>
+                            <constraint firstItem="edd-qs-jCh" firstAttribute="top" secondItem="5H5-5r-NMy" secondAttribute="top" constant="24" id="S0M-r6-87p"/>
+                            <constraint firstItem="z66-O1-jkB" firstAttribute="top" secondItem="edd-qs-jCh" secondAttribute="bottom" constant="7.5" id="UfD-2e-wGl"/>
+                            <constraint firstItem="edd-qs-jCh" firstAttribute="leading" secondItem="5H5-5r-NMy" secondAttribute="leading" constant="15" id="Vx6-Rv-WSw"/>
                             <constraint firstItem="RZm-b0-ldD" firstAttribute="leading" secondItem="5H5-5r-NMy" secondAttribute="leading" constant="125" id="ZmG-ak-Ov0"/>
-                            <constraint firstItem="edd-qs-jCh" firstAttribute="top" secondItem="5H5-5r-NMy" secondAttribute="top" constant="23" id="eOB-3g-syL"/>
-                            <constraint firstItem="UMu-AS-TpW" firstAttribute="leading" secondItem="5H5-5r-NMy" secondAttribute="leading" constant="15" id="mpv-EF-DU3"/>
+                            <constraint firstItem="z66-O1-jkB" firstAttribute="leading" secondItem="5H5-5r-NMy" secondAttribute="leading" constant="15" id="brF-Tq-gzl"/>
                             <constraint firstItem="RZm-b0-ldD" firstAttribute="top" secondItem="5H5-5r-NMy" secondAttribute="top" constant="32" id="vCp-fQ-ZRK"/>
-                            <constraint firstAttribute="bottom" secondItem="UMu-AS-TpW" secondAttribute="bottom" constant="27" id="vwt-1u-88i"/>
+                            <constraint firstItem="RZm-b0-ldD" firstAttribute="leading" secondItem="edd-qs-jCh" secondAttribute="trailing" constant="68.5" id="vVI-zQ-1UO"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qk-cY-254">
@@ -90,7 +90,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="pokemonImage" destination="zcs-4u-fKo" id="7Ct-TC-dnK"/>
-                <outlet property="pokemonName" destination="UMu-AS-TpW" id="R7I-Fa-2wC"/>
+                <outlet property="pokemonName" destination="z66-O1-jkB" id="Ajq-5o-nuL"/>
                 <outlet property="pokemonNumber" destination="edd-qs-jCh" id="ETo-rc-jCC"/>
                 <outlet property="pokemonTypeImg1" destination="agI-Hg-Pmf" id="Osk-HP-c01"/>
                 <outlet property="pokemonTypeImg2" destination="bJ5-tl-bUP" id="0Fp-1f-Vuo"/>
