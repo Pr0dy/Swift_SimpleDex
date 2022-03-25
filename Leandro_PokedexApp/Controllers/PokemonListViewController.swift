@@ -21,7 +21,6 @@ class PokemonListViewController: UIViewController {
     }
     
 }
-    
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
         
@@ -67,6 +66,5 @@ extension PokemonListViewController: PokemonManagerDelegate{
     func didFailWithError(error: Error) {
         print(error)
     }
- 
 }
 
