@@ -14,6 +14,7 @@ class PokemonListViewController: UIViewController  {
         tableView.dataSource = self
         pokemonManager.delegate = self
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
+    
         
         for i in 1...appConstants.totalPokemons{
             pokemonManager.fetchPokemon(number: i)
