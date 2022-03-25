@@ -39,6 +39,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pokédex" largeTitleDisplayMode="always" id="yh2-eB-zy7"/>
                     <connections>
+                        <outlet property="searchBar" destination="bFV-NN-j2F" id="02s-3J-g8E"/>
                         <outlet property="tableView" destination="0QG-Mt-Qq3" id="zJZ-Vp-uwA"/>
                     </connections>
                 </viewController>

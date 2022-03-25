@@ -1,18 +1,21 @@
 import UIKit
 
-class PokemonListViewController: UIViewController  {
+class PokemonListViewController: UIViewController, UISearchBarDelegate  {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     var pokemonManager = PokemonManager()
     var appConstants = AppStrList()
     var cellToDisplay: PokemonCell?
     var pokemonDictList = [Int:PokemonModel]()
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         pokemonManager.delegate = self
+        searchBar.delegate = self
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
     
         
