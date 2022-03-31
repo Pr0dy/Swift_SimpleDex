@@ -32,7 +32,7 @@ class PokemonListViewController: UIViewController  {
 {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return appConstants.totalPokemons
+            return filteredPokemonList!.count   
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
