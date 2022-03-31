@@ -93,8 +93,8 @@
 		D27AE3C827DB6E6000A879C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D27AE3B927DB626400A879C4 /* Main.storyboard */,
 				D27AE3BE27DB626500A879C4 /* LaunchScreen.storyboard */,
+				D27AE3B927DB626400A879C4 /* Main.storyboard */,
 				D2C425A727E7DC3900A7F333 /* PokemonCell.xib */,
 			);
 			path = Views;
