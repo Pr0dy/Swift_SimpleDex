@@ -1,6 +1,7 @@
 import UIKit
+import CoreData
 
-class PokemonListViewController: UIViewController, UISearchBarDelegate  {
+class PokemonListViewController: UIViewController  {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
@@ -8,6 +9,7 @@ class PokemonListViewController: UIViewController, UISearchBarDelegate  {
     var appConstants = AppStrList()
     var cellToDisplay: PokemonCell?
     var pokemonDictList = [Int:PokemonModel]()
+    var filteredPokemonList: [Int:PokemonModel]?
     
         
     override func viewDidLoad() {
@@ -17,8 +19,9 @@ class PokemonListViewController: UIViewController, UISearchBarDelegate  {
         pokemonManager.delegate = self
         searchBar.delegate = self
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
-    
         
+            filteredPokemonList = pokemonDictList
+                
         for i in 1...appConstants.totalPokemons{
             pokemonManager.fetchPokemon(number: i)
         }
@@ -40,7 +43,7 @@ class PokemonListViewController: UIViewController, UISearchBarDelegate  {
             
              cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
              
-             if let pokemon = pokemonDictList[indexPath.row+1]{
+             if let pokemon = filteredPokemonList![indexPath.row+1]{
                  cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
                  cellToDisplay?.pokemonNumber.text = "#\(pokemon.number)"
                  cellToDisplay?.pokemonImage.image = pokemon.defaultSpritImage
@@ -59,10 +62,10 @@ class PokemonListViewController: UIViewController, UISearchBarDelegate  {
 
 
 extension PokemonListViewController: PokemonManagerDelegate{
-    
     func didUpdatePokemon(pokemon: PokemonModel) {
         DispatchQueue.main.async {
             self.pokemonDictList[pokemon.number] = pokemon
+            self.filteredPokemonList = self.pokemonDictList
             self.tableView.reloadData()
         }
     }
@@ -71,3 +74,30 @@ extension PokemonListViewController: PokemonManagerDelegate{
         print(error)
     }
 }
+
+
+extension PokemonListViewController: UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            
+        var searchResults = [Int:PokemonModel]()
+        
+        if searchText == ""{
+            filteredPokemonList = pokemonDictList
+        }
+        
+        else{
+            if CharacterSet(charactersIn: searchText).isSubset(of: CharacterSet.decimalDigits){
+                searchResults[1] = pokemonDictList[Int(searchText)!]
+            }
+            
+            filteredPokemonList = searchResults
+        }
+        
+        
+        self.tableView.reloadData()
+     
+    }
+}
+
+
