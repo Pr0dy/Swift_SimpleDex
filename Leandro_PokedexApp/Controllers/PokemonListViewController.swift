@@ -79,7 +79,6 @@ extension PokemonListViewController: PokemonManagerDelegate{
 extension PokemonListViewController: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            
         var searchResults = [Int:PokemonModel]()
         var counter = 1
         
@@ -93,11 +92,11 @@ extension PokemonListViewController: UISearchBarDelegate{
             }
             
             else{
-                for pokemon in pokemonDictList{
-                    if pokemon.value.name.lowercased().contains(searchText.lowercased())
-                        || pokemon.value.mainPokemonType.lowercased() == searchText.lowercased()
-                        || pokemon.value.secondaryPokemonType?.lowercased() == searchText.lowercased(){
-                        searchResults[counter] = pokemon.value
+                for entry in Array(pokemonDictList.keys).sorted(by:<){
+                    if pokemonDictList[entry]!.name.lowercased().contains(searchText.lowercased())
+                        || pokemonDictList[entry]!.mainPokemonType.lowercased() == searchText.lowercased()
+                        || pokemonDictList[entry]!.secondaryPokemonType?.lowercased() == searchText.lowercased(){
+                        searchResults[counter] = pokemonDictList[entry]
                         counter+=1
                     }
                 }
