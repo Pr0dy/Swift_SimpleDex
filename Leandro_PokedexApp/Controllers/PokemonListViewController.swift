@@ -31,6 +31,10 @@ class PokemonListViewController: UIViewController  {
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
         
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            self.performSegue(withIdentifier: appConstants.detailScreenSegueIdentifier, sender: self)
+        }
+        
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return filteredPokemonList!.count
         }

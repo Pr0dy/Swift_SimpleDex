@@ -41,6 +41,7 @@
                     <connections>
                         <outlet property="searchBar" destination="bFV-NN-j2F" id="pT0-xI-E1A"/>
                         <outlet property="tableView" destination="0QG-Mt-Qq3" id="zJZ-Vp-uwA"/>
+                        <segue destination="oza-sa-pbC" kind="presentation" identifier="toPokemonDetailScreen" id="w2L-pD-2DY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jV-GV-yyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -52,7 +53,7 @@
             <objects>
                 <viewController id="oza-sa-pbC" customClass="PokemonDetailScreenController" customModule="Leandro_PokedexApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lsG-0U-3e2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="mrR-HA-KEC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
