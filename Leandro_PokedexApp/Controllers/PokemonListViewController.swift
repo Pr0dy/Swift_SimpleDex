@@ -104,10 +104,7 @@ extension PokemonListViewController: UISearchBarDelegate{
             
              filteredPokemonList = searchResults
         }
-        
-        
         self.tableView.reloadData()
-     
     }
 }
 
