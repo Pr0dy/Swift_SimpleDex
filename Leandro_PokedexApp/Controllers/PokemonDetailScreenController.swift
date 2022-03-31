@@ -8,11 +8,17 @@
 import UIKit
 
 class PokemonDetailScreenController: UIViewController {
+    
+    var pokemon: PokemonModel?
 
+    @IBOutlet weak var pokemonName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self.pokemonName.text = self.pokemon?.name
 
-        // Do any additional setup after loading the view.
+        }
+        
     }
     
 

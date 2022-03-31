@@ -10,7 +10,7 @@ class PokemonListViewController: UIViewController  {
     var cellToDisplay: PokemonCell?
     var pokemonDictList = [Int:PokemonModel]()
     var filteredPokemonList: [Int:PokemonModel]?
-    
+    var pokemonDetails: PokemonModel?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +27,20 @@ class PokemonListViewController: UIViewController  {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == appConstants.detailScreenSegueIdentifier{
+            let nextVC = segue.destination as! PokemonDetailScreenController
+            nextVC.pokemon = pokemonDetails
+        }
+    }
+    
 }
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             self.performSegue(withIdentifier: appConstants.detailScreenSegueIdentifier, sender: self)
+            pokemonDetails = pokemonDictList[indexPath.row+1]
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
