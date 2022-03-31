@@ -32,7 +32,7 @@ class PokemonListViewController: UIViewController  {
 {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return filteredPokemonList!.count   
+            return filteredPokemonList!.count
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,6 +81,7 @@ extension PokemonListViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             
         var searchResults = [Int:PokemonModel]()
+        var counter = 1
         
         if searchText == ""{
             filteredPokemonList = pokemonDictList
@@ -91,7 +92,18 @@ extension PokemonListViewController: UISearchBarDelegate{
                 searchResults[1] = pokemonDictList[Int(searchText)!]
             }
             
-            filteredPokemonList = searchResults
+            else{
+                for pokemon in pokemonDictList{
+                    if pokemon.value.name.lowercased().contains(searchText.lowercased())
+                        || pokemon.value.mainPokemonType.lowercased() == searchText.lowercased()
+                        || pokemon.value.secondaryPokemonType?.lowercased() == searchText.lowercased(){
+                        searchResults[counter] = pokemon.value
+                        counter+=1
+                    }
+                }
+            }
+            
+             filteredPokemonList = searchResults
         }
         
         
