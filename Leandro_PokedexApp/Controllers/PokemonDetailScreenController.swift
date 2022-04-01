@@ -20,7 +20,7 @@ class PokemonDetailScreenController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = pokemon!.cell_color_type
         pokemonName.text = pokemon!.getPokemonName()
-        pokemonNumber.text = "\(pokemon!.number)"
+        pokemonNumber.text = "#\(pokemon!.number)"
         pokemonSpriteImage.image = pokemon!.defaultSpritImage
         pokemonTypeImg1.image = pokemon!.getCellPokemonTypeIcon(pokemonType: pokemon!.mainPokemonType)
         
