@@ -10,7 +10,7 @@ class PokemonListViewController: UIViewController  {
     var cellToDisplay: PokemonCell?
     var pokemonDictList = [Int:PokemonModel]()
     var filteredPokemonList: [Int:PokemonModel]?
-    
+    var pokemonDetails: PokemonModel?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +26,21 @@ class PokemonListViewController: UIViewController  {
             pokemonManager.fetchPokemon(number: i)
         }
     }
-    
 }
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            pokemonDetails = pokemonDictList[indexPath.row+1]
+            self.performSegue(withIdentifier: appConstants.detailScreenSegueIdentifier, sender: self)
+        }
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == appConstants.detailScreenSegueIdentifier{
+                let nextVC = segue.destination as! PokemonDetailScreenController
+                nextVC.pokemon = pokemonDetails
+            }
+        }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return filteredPokemonList!.count
@@ -42,9 +53,9 @@ class PokemonListViewController: UIViewController  {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
              cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
-            
+
             cellToDisplay?.selectionStyle = .none
-             
+            
              if let pokemon = filteredPokemonList![indexPath.row+1]{
                  cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
                  cellToDisplay?.pokemonNumber.text = "#\(pokemon.number)"
@@ -106,10 +117,7 @@ extension PokemonListViewController: UISearchBarDelegate{
             
              filteredPokemonList = searchResults
         }
-        
-        
         self.tableView.reloadData()
-     
     }
 }
 
