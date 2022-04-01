@@ -68,6 +68,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="backgoundRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="FhV-UK-QPK">
+                                <rect key="frame" x="0.0" y="300" width="414" height="542"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="414-Ga-CSf">
                                 <rect key="frame" x="324" y="50" width="40" height="40"/>
                                 <constraints>
@@ -76,7 +79,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QTA-F6-0xh">
-                                <rect key="frame" x="32" y="150" width="350" height="350"/>
+                                <rect key="frame" x="32" y="140" width="350" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="XQl-bk-s2q"/>
                                     <constraint firstAttribute="height" constant="350" id="wff-zx-5VG"/>
@@ -95,12 +98,17 @@
                         <constraints>
                             <constraint firstItem="Axr-1L-xms" firstAttribute="top" secondItem="414-Ga-CSf" secondAttribute="bottom" constant="20" id="3o8-TR-Rcf"/>
                             <constraint firstItem="WUe-gk-ZhA" firstAttribute="top" secondItem="Ytv-V4-qS1" secondAttribute="bottom" constant="15" id="4gH-PZ-m5M"/>
-                            <constraint firstItem="QTA-F6-0xh" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="150" id="Gcw-96-dA0"/>
+                            <constraint firstItem="QTA-F6-0xh" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="140" id="Gcw-96-dA0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Axr-1L-xms" secondAttribute="trailing" constant="30" id="HWn-e0-5SW"/>
+                            <constraint firstItem="FhV-UK-QPK" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" id="Hf3-90-C4W"/>
+                            <constraint firstItem="FhV-UK-QPK" firstAttribute="trailing" secondItem="mrR-HA-KEC" secondAttribute="trailing" id="MLn-kX-v9I"/>
                             <constraint firstAttribute="trailingMargin" secondItem="414-Ga-CSf" secondAttribute="trailing" constant="30" id="WMd-pb-yEE"/>
                             <constraint firstItem="414-Ga-CSf" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="50" id="XPb-L8-pid"/>
+                            <constraint firstAttribute="bottom" secondItem="FhV-UK-QPK" secondAttribute="bottom" id="akU-oj-cNE"/>
                             <constraint firstItem="Ytv-V4-qS1" firstAttribute="top" secondItem="mrR-HA-KEC" secondAttribute="top" constant="80" id="cSw-wJ-Hlm"/>
                             <constraint firstItem="mrR-HA-KEC" firstAttribute="trailing" secondItem="QTA-F6-0xh" secondAttribute="trailing" constant="32" id="lDp-YY-6q9"/>
+                            <constraint firstAttribute="bottom" secondItem="FhV-UK-QPK" secondAttribute="bottom" id="m3C-5L-vJ6"/>
+                            <constraint firstItem="FhV-UK-QPK" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="top" constant="300" id="r6a-iu-VF1"/>
                             <constraint firstItem="Ytv-V4-qS1" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="60" id="xRm-JP-oDB"/>
                             <constraint firstItem="WUe-gk-ZhA" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="60" id="xcQ-JL-8LG"/>
                             <constraint firstItem="QTA-F6-0xh" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="32" id="z03-86-M7B"/>
@@ -138,6 +146,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backgoundRectangle" width="85.333335876464844" height="85.333335876464844"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
