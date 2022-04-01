@@ -26,21 +26,20 @@ class PokemonListViewController: UIViewController  {
             pokemonManager.fetchPokemon(number: i)
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == appConstants.detailScreenSegueIdentifier{
-            let nextVC = segue.destination as! PokemonDetailScreenController
-            nextVC.pokemon = pokemonDetails
-        }
-    }
-    
 }
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            self.performSegue(withIdentifier: appConstants.detailScreenSegueIdentifier, sender: self)
             pokemonDetails = pokemonDictList[indexPath.row+1]
+            self.performSegue(withIdentifier: appConstants.detailScreenSegueIdentifier, sender: self)
+        }
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == appConstants.detailScreenSegueIdentifier{
+                let nextVC = segue.destination as! PokemonDetailScreenController
+                nextVC.pokemon = pokemonDetails
+            }
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +53,9 @@ class PokemonListViewController: UIViewController  {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
              cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
-             
+
+            cellToDisplay?.selectionStyle = .none
+            
              if let pokemon = filteredPokemonList![indexPath.row+1]{
                  cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
                  cellToDisplay?.pokemonNumber.text = "#\(pokemon.number)"

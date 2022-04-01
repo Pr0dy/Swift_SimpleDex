@@ -14,11 +14,7 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.pokemonName.text = self.pokemon?.name
-
-        }
-        
+        self.pokemonName.text = self.pokemon?.name
     }
     
 
