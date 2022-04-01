@@ -11,14 +11,23 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonNumber: UILabel!
     @IBOutlet weak var pokemonName: UILabel!
     @IBOutlet weak var pokemonTypeImg1: UIImageView!
-    @IBOutlet weak var pokemontTypeImg2: UIImageView!
+    @IBOutlet weak var pokemonTypeImg2: UIImageView!
     @IBOutlet weak var pokemonSpriteImage: UIImageView!
     
     var pokemon: PokemonModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pokemonName.text = self.pokemon?.name
+        self.view.backgroundColor = pokemon!.cell_color_type
+        pokemonName.text = pokemon!.getPokemonName()
+        pokemonNumber.text = "\(pokemon!.number)"
+        pokemonSpriteImage.image = pokemon!.defaultSpritImage
+        pokemonTypeImg1.image = pokemon!.getCellPokemonTypeIcon(pokemonType: pokemon!.mainPokemonType)
+        
+        
+        if let secondaryType = pokemon!.secondaryPokemonType{
+           pokemonTypeImg2.image = pokemon!.getCellPokemonTypeIcon(pokemonType:secondaryType)
+        }
     }
     
 

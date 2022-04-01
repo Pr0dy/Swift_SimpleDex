@@ -96,7 +96,7 @@
                         <outlet property="pokemonNumber" destination="Ytv-V4-qS1" id="zio-4L-fd2"/>
                         <outlet property="pokemonSpriteImage" destination="ALW-rM-zMB" id="6Kb-Pn-62Y"/>
                         <outlet property="pokemonTypeImg1" destination="414-Ga-CSf" id="hes-aE-RxK"/>
-                        <outlet property="pokemontTypeImg2" destination="Axr-1L-xms" id="9qh-46-rFj"/>
+                        <outlet property="pokemonTypeImg2" destination="Axr-1L-xms" id="9qh-46-rFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yA-KP-QKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
