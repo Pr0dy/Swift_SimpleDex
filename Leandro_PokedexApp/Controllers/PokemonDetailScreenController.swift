@@ -8,10 +8,14 @@
 import UIKit
 
 class PokemonDetailScreenController: UIViewController {
+    @IBOutlet weak var pokemonNumber: UILabel!
+    @IBOutlet weak var pokemonName: UILabel!
+    @IBOutlet weak var pokemonTypeImg1: UIImageView!
+    @IBOutlet weak var pokemontTypeImg2: UIImageView!
+    @IBOutlet weak var pokemonSpriteImage: UIImageView!
     
     var pokemon: PokemonModel?
-
-    @IBOutlet weak var pokemonName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pokemonName.text = self.pokemon?.name
