@@ -42,6 +42,8 @@ class PokemonListViewController: UIViewController  {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
              cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
+            
+            cellToDisplay?.selectionStyle = .none
              
              if let pokemon = filteredPokemonList![indexPath.row+1]{
                  cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
