@@ -59,7 +59,6 @@ struct PokemonModel{
     var cell_color_type: UIColor{
         get{
             var color: UIColor
-            
             switch(mainPokemonType){
             case "normal": color = UIColor(red: CGFloat(168) / 255.0, green: CGFloat(168) / 255.0, blue: CGFloat(125) / 255.0, alpha: 1.0);break;
             case "fire": color = UIColor(red: CGFloat(242) / 255.0, green: CGFloat(171) / 255.0, blue: CGFloat(101) / 255.0, alpha: 1.0); break;

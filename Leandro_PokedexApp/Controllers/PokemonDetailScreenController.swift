@@ -31,7 +31,16 @@ class PokemonDetailScreenController: UIViewController {
     }
     
     @IBAction func pressedShinyButton(_ sender: UIButton) {
-        pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.shinySprite)
+        
+        if sender.currentTitle == "Shinny"{
+            pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.shinySprite)
+            sender.setTitle("Normal", for: .normal)
+        } else {
+            pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.defaultSprite)
+            sender.setTitle("Shinny", for: .normal)
+        }
+        
+        
     }
     
 }
