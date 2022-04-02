@@ -6,7 +6,7 @@ class PokemonListViewController: UIViewController  {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     var pokemonManager = PokemonManager()
-    var appConstants = AppStrList()
+    var appConstants = AppConstants()
     var cellToDisplay: PokemonCell?
     var pokemonDictList = [Int:PokemonModel]()
     var filteredPokemonList: [Int:PokemonModel]?
@@ -47,7 +47,7 @@ class PokemonListViewController: UIViewController  {
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 100
+            return CGFloat(appConstants.cellHeight)
         }
          
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

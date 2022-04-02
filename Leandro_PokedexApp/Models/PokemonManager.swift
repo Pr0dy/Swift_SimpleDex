@@ -11,7 +11,7 @@ struct PokemonManager{
     var pokemonNum: Int?
     
     mutating func fetchPokemon(number: Int){
-        let pokemonBaseURL = "\(AppStrList().pokemonBaseURL)\(number)"
+        let pokemonBaseURL = "\(AppConstants().pokemonBaseURL)\(number)"
         pokemonNum = number
         performRequest(with: pokemonBaseURL)
     }
