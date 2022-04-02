@@ -110,7 +110,10 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Shinny"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Normal"/>
+                                <connections>
+                                    <action selector="pressedShinyButton:" destination="oza-sa-pbC" eventType="touchUpInside" id="oqb-x4-vgH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HI8-Wl-LzA" userLabel="PokemonDescription">
                                 <rect key="frame" x="40" y="538" width="42" height="21"/>

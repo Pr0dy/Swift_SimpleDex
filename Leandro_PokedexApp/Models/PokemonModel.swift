@@ -9,8 +9,9 @@ struct PokemonModel{
     let secondaryPokemonType: String?
     let height: Int
     let weight: Int
+    let shinySprite: String
     
-    init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil, height: Int, weight: Int){
+    init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil, height: Int, weight: Int, shinySprite: String){
         self.name = pokemonName
         self.number = pokemonNumber
         self.defaultSprite = defaultSprite
@@ -18,15 +19,13 @@ struct PokemonModel{
         self.secondaryPokemonType = secondaryPokemonType
         self.height = height
         self.weight = weight
+        self.shinySprite = shinySprite
     }
     
-    
-    var defaultSpritImage: UIImage{
-        get{
-            let imageUrl = URL(string: defaultSprite)!
-            let imageData = try! Data(contentsOf: imageUrl)
-            return UIImage(data: imageData)!
-        }
+    func getSpriteImg(spriteURL: String) -> UIImage{
+        let imageUrl = URL(string: spriteURL)!
+        let imageData = try! Data(contentsOf: imageUrl)
+        return UIImage(data: imageData)!
     }
     
     func getPokemonName() -> String{
@@ -64,7 +63,6 @@ struct PokemonModel{
     var cell_color_type: UIColor{
         get{
             var color: UIColor
-            
             switch(mainPokemonType){
             case "normal": color = UIColor(red: CGFloat(168) / 255.0, green: CGFloat(168) / 255.0, blue: CGFloat(125) / 255.0, alpha: 1.0);break;
             case "fire": color = UIColor(red: CGFloat(242) / 255.0, green: CGFloat(171) / 255.0, blue: CGFloat(101) / 255.0, alpha: 1.0); break;

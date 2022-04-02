@@ -2,11 +2,10 @@ import UIKit
 import CoreData
 
 class PokemonListViewController: UIViewController  {
-    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     var pokemonManager = PokemonManager()
-    var appConstants = AppStrList()
+    var appConstants = AppConstants()
     var cellToDisplay: PokemonCell?
     var pokemonDictList = [Int:PokemonModel]()
     var filteredPokemonList: [Int:PokemonModel]?
@@ -47,7 +46,7 @@ class PokemonListViewController: UIViewController  {
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 100
+            return CGFloat(appConstants.cellHeight)
         }
          
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +58,7 @@ class PokemonListViewController: UIViewController  {
              if let pokemon = filteredPokemonList![indexPath.row+1]{
                  cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
                  cellToDisplay?.pokemonNumber.text = "#\(pokemon.number)"
-                 cellToDisplay?.pokemonImage.image = pokemon.defaultSpritImage
+                 cellToDisplay?.pokemonImage.image = pokemon.getSpriteImg(spriteURL: pokemon.defaultSprite)
                  cellToDisplay?.backgroundColor = pokemon.cell_color_type
                  cellToDisplay?.pokemonTypeImg1.image = pokemon.getCellPokemonTypeIcon(pokemonType: pokemon.mainPokemonType)
                  cellToDisplay?.pokemonTypeImg2.image = nil

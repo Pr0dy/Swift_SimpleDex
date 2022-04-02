@@ -21,7 +21,7 @@ class PokemonDetailScreenController: UIViewController {
         self.view.backgroundColor = pokemon!.cell_color_type
         pokemonName.text = pokemon!.getPokemonName()
         pokemonNumber.text = "#\(pokemon!.number)"
-        pokemonSpriteImage.image = pokemon!.defaultSpritImage
+        pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.defaultSprite)
         pokemonTypeImg1.image = pokemon!.getCellPokemonTypeIcon(pokemonType: pokemon!.mainPokemonType)
         
         
@@ -30,15 +30,17 @@ class PokemonDetailScreenController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func pressedShinyButton(_ sender: UIButton) {
+        
+        if sender.currentTitle == "Shinny"{
+            pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.defaultSprite)
+            sender.setTitle("Normal", for: .normal)
+        } else {
+            pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.shinySprite)
+            sender.setTitle("Shinny", for: .normal)
+        }
+        
+        
     }
-    */
-
+    
 }

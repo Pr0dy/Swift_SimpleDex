@@ -11,7 +11,7 @@ struct PokemonManager{
     var pokemonNum: Int?
     
     mutating func fetchPokemon(number: Int){
-        let pokemonBaseURL = "\(AppStrList().pokemonBaseURL)\(number)"
+        let pokemonBaseURL = "\(AppConstants().pokemonBaseURL)\(number)"
         pokemonNum = number
         performRequest(with: pokemonBaseURL)
     }
@@ -41,9 +41,10 @@ struct PokemonManager{
             let pokemon: PokemonModel
             
             if decodedData.types.count > 1{
-                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name, height: decodedData.height, weight: decodedData.weight)
+
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!)
             } else {
-                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, height: decodedData.height, weight: decodedData.weight)
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!)
             }
             
             return pokemon
