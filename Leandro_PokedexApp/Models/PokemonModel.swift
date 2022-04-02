@@ -7,22 +7,21 @@ struct PokemonModel{
     let defaultSprite: String
     let mainPokemonType: String
     let secondaryPokemonType: String?
+    let shinySprite: String
     
-    init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil ){
+    init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, shinySprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil ){
         self.name = pokemonName
         self.number = pokemonNumber
         self.defaultSprite = defaultSprite
         self.mainPokemonType = mainPokemonType
         self.secondaryPokemonType = secondaryPokemonType
+        self.shinySprite = shinySprite
     }
     
-    
-    var defaultSpritImage: UIImage{
-        get{
-            let imageUrl = URL(string: defaultSprite)!
-            let imageData = try! Data(contentsOf: imageUrl)
-            return UIImage(data: imageData)!
-        }
+    func getSpriteImg(spriteURL: String) -> UIImage{
+        let imageUrl = URL(string: spriteURL)!
+        let imageData = try! Data(contentsOf: imageUrl)
+        return UIImage(data: imageData)!
     }
     
     func getPokemonName() -> String{

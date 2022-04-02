@@ -111,6 +111,9 @@
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Shinny"/>
+                                <connections>
+                                    <action selector="pressedShinyButton:" destination="oza-sa-pbC" eventType="touchUpInside" id="oqb-x4-vgH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mrR-HA-KEC"/>

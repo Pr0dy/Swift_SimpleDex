@@ -59,7 +59,7 @@ class PokemonListViewController: UIViewController  {
              if let pokemon = filteredPokemonList![indexPath.row+1]{
                  cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
                  cellToDisplay?.pokemonNumber.text = "#\(pokemon.number)"
-                 cellToDisplay?.pokemonImage.image = pokemon.defaultSpritImage
+                 cellToDisplay?.pokemonImage.image = pokemon.getSpriteImg(spriteURL: pokemon.defaultSprite)
                  cellToDisplay?.backgroundColor = pokemon.cell_color_type
                  cellToDisplay?.pokemonTypeImg1.image = pokemon.getCellPokemonTypeIcon(pokemonType: pokemon.mainPokemonType)
                  cellToDisplay?.pokemonTypeImg2.image = nil
