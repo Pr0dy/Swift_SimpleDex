@@ -41,9 +41,9 @@ struct PokemonManager{
             let pokemon: PokemonModel
             
             if decodedData.types.count > 1{
-                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name)
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name, height: decodedData.height, weight: decodedData.weight)
             } else {
-                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name)
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, height: decodedData.height, weight: decodedData.weight)
             }
             
             return pokemon

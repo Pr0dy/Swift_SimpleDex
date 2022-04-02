@@ -7,13 +7,17 @@ struct PokemonModel{
     let defaultSprite: String
     let mainPokemonType: String
     let secondaryPokemonType: String?
+    let height: Int
+    let weight: Int
     
-    init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil ){
+    init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil, height: Int, weight: Int){
         self.name = pokemonName
         self.number = pokemonNumber
         self.defaultSprite = defaultSprite
         self.mainPokemonType = mainPokemonType
         self.secondaryPokemonType = secondaryPokemonType
+        self.height = height
+        self.weight = weight
     }
     
     
