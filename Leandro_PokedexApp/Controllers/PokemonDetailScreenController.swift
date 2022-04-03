@@ -13,7 +13,9 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonTypeImg1: UIImageView!
     @IBOutlet weak var pokemonTypeImg2: UIImageView!
     @IBOutlet weak var pokemonSpriteImage: UIImageView!
+    @IBOutlet weak var pokemonWeight: UILabel!
     
+    @IBOutlet weak var pokemonHeight: UILabel!
     var pokemon: PokemonModel?
     
     override func viewDidLoad() {
@@ -23,10 +25,10 @@ class PokemonDetailScreenController: UIViewController {
         pokemonNumber.text = "#\(pokemon!.number)"
         pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.defaultSprite)
         pokemonTypeImg1.image = pokemon!.getCellPokemonTypeIcon(pokemonType: pokemon!.mainPokemonType)
-        
-        
+        pokemonHeight.text = "\(pokemon!.height) cm"
+        pokemonWeight.text = "\(pokemon!.weight) kg"
         if let secondaryType = pokemon!.secondaryPokemonType{
-           pokemonTypeImg2.image = pokemon!.getCellPokemonTypeIcon(pokemonType:secondaryType)
+           pokemonTypeImg2.image = pokemon?.getCellPokemonTypeIcon(pokemonType:secondaryType)
         }
     }
     
