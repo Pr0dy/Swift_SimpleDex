@@ -14,7 +14,6 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonTypeImg2: UIImageView!
     @IBOutlet weak var pokemonSpriteImage: UIImageView!
     @IBOutlet weak var pokemonWeight: UILabel!
-    
     @IBOutlet weak var pokemonHeight: UILabel!
     var pokemon: PokemonModel?
     
