@@ -1,39 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "7BAF4F20-F88A-40E4-9C4E-F5DE1323B44F"
+   uuid = "4B0AF7DF-35A2-4F67-AAC4-EB477A1275B2"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "077D9178-D91C-463D-BD07-6E43D1D0D4FB"
+            uuid = "452084A3-BE5D-4461-B906-D29EB58A3F81"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Leandro_PokedexApp/Controllers/PokemonListViewController.swift"
+            filePath = "Leandro_PokedexApp/Controllers/PokemonDetailScreenController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "searchBar(_:textDidChange:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "34F986D4-098C-4E5B-93F1-7B6030B009CB"
+            uuid = "FFB63F64-67CF-4C8A-B4D5-7D5A88A52440"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Leandro_PokedexApp/Controllers/PokemonListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73B0DEC4-7B21-4589-9A42-97782A3660DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leandro_PokedexApp/Controllers/PokemonListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "PokemonListViewController"
-            landmarkType = "21">
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
