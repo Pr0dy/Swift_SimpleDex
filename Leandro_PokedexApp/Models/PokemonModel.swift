@@ -8,7 +8,17 @@ struct PokemonModel{
     let mainPokemonType: String
     let secondaryPokemonType: String?
     let height: Int
+    var convertHeight: String{
+        get{
+            return String(format: "%.1f", Float(height) / 10)
+        }
+    }
     let weight: Int
+    var convertWeight: String{
+        get{
+            return String(format: "%.1f", Float(weight) / 10)
+        }
+    }
     let shinySprite: String
     
     init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil, height: Int, weight: Int, shinySprite: String){
