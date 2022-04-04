@@ -149,37 +149,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J83-rO-ZoF">
-                                <rect key="frame" x="60" y="550" width="23" height="21"/>
+                                <rect key="frame" x="70" y="550" width="23" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yd-lN-Eq3">
-                                <rect key="frame" x="98" y="550" width="42" height="21"/>
+                                <rect key="frame" x="108" y="550" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-Qi-JlM">
-                                <rect key="frame" x="30" y="599" width="49" height="21"/>
+                                <rect key="frame" x="40" y="599" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lz2-Zr-HrG">
-                                <rect key="frame" x="99" y="599" width="42" height="21"/>
+                                <rect key="frame" x="109" y="599" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Defense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwN-TW-H2Y">
-                                <rect key="frame" x="15" y="645" width="64" height="21"/>
+                                <rect key="frame" x="25" y="645" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npU-bv-OfO">
-                                <rect key="frame" x="99" y="645" width="42" height="21"/>
+                                <rect key="frame" x="109" y="645" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -224,23 +224,22 @@
                         <viewLayoutGuide key="safeArea" id="mrR-HA-KEC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="uJO-di-4uR" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="176" id="3F3-4M-Uy3"/>
                             <constraint firstItem="Axr-1L-xms" firstAttribute="top" secondItem="414-Ga-CSf" secondAttribute="bottom" constant="10" id="3o8-TR-Rcf"/>
                             <constraint firstItem="WUe-gk-ZhA" firstAttribute="top" secondItem="Ytv-V4-qS1" secondAttribute="bottom" id="4gH-PZ-m5M"/>
-                            <constraint firstItem="uwN-TW-H2Y" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="15" id="85W-BO-6zB"/>
+                            <constraint firstItem="uwN-TW-H2Y" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="25" id="85W-BO-6zB"/>
                             <constraint firstItem="ahW-69-W4P" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="448" id="Chl-Cb-TU9"/>
                             <constraint firstItem="uwN-TW-H2Y" firstAttribute="top" secondItem="aF5-Qi-JlM" secondAttribute="bottom" constant="25" id="DTz-LB-HdM"/>
                             <constraint firstItem="rxH-RE-aaf" firstAttribute="leading" secondItem="F4w-X5-yma" secondAttribute="trailing" constant="5" id="E0N-Zp-FbS"/>
                             <constraint firstItem="Lz2-Zr-HrG" firstAttribute="top" secondItem="0yd-lN-Eq3" secondAttribute="bottom" constant="28" id="E5Z-Ne-R2E"/>
                             <constraint firstItem="FRc-nd-Att" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="550" id="E7h-WH-k2h"/>
-                            <constraint firstItem="RaU-s6-2AQ" firstAttribute="leading" secondItem="0yd-lN-Eq3" secondAttribute="trailing" constant="35" id="Fcl-zs-CEO"/>
                             <constraint firstItem="QTA-F6-0xh" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="130" id="Gcw-96-dA0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Axr-1L-xms" secondAttribute="trailing" constant="30" id="HWn-e0-5SW"/>
                             <constraint firstItem="Hvb-Bh-48F" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="32" id="IEN-8h-4N9"/>
-                            <constraint firstItem="J83-rO-ZoF" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="60" id="IL5-ZF-v2r"/>
+                            <constraint firstItem="J83-rO-ZoF" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="70" id="IL5-ZF-v2r"/>
                             <constraint firstItem="F4w-X5-yma" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="448" id="JcA-J2-cD9"/>
                             <constraint firstItem="AyJ-t3-Oni" firstAttribute="leading" secondItem="Hvb-Bh-48F" secondAttribute="trailing" constant="25" id="K21-3b-Y44"/>
                             <constraint firstItem="rxH-RE-aaf" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="457" id="MNQ-OU-9gS"/>
-                            <constraint firstItem="uJO-di-4uR" firstAttribute="leading" secondItem="Lz2-Zr-HrG" secondAttribute="trailing" constant="35" id="Mo1-1K-9YA"/>
                             <constraint firstItem="D1u-dL-rlW" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="645" id="NEv-Cw-5FK"/>
                             <constraint firstItem="KLw-HP-2mH" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="508" id="PZg-Ok-Fnu"/>
                             <constraint firstItem="3dg-6I-lzz" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="599" id="QBo-fy-YzS"/>
@@ -250,6 +249,7 @@
                             <constraint firstItem="KLw-HP-2mH" firstAttribute="centerX" secondItem="lsG-0U-3e2" secondAttribute="centerX" id="Wqg-fY-OpW"/>
                             <constraint firstItem="414-Ga-CSf" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="50" id="XPb-L8-pid"/>
                             <constraint firstItem="3dg-6I-lzz" firstAttribute="leading" secondItem="uJO-di-4uR" secondAttribute="trailing" constant="10" id="Ysi-2o-tGs"/>
+                            <constraint firstItem="qyx-7Q-qJY" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="176" id="abW-S8-2Xb"/>
                             <constraint firstItem="RaU-s6-2AQ" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="549" id="bDS-ol-uEq"/>
                             <constraint firstItem="D1u-dL-rlW" firstAttribute="leading" secondItem="qyx-7Q-qJY" secondAttribute="trailing" constant="85" id="bnu-Ft-kur"/>
                             <constraint firstItem="rxH-RE-aaf" firstAttribute="leading" secondItem="F4w-X5-yma" secondAttribute="trailing" constant="5" id="cJm-pw-I4j"/>
@@ -265,10 +265,10 @@
                             <constraint firstItem="V3d-XO-DpF" firstAttribute="trailing" secondItem="mrR-HA-KEC" secondAttribute="trailing" id="o5L-Za-C1e"/>
                             <constraint firstItem="uJO-di-4uR" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="599" id="pMj-75-pBm"/>
                             <constraint firstAttribute="bottom" secondItem="V3d-XO-DpF" secondAttribute="bottom" id="q1Y-LP-xST"/>
-                            <constraint firstItem="aF5-Qi-JlM" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="30" id="qC8-qS-LE1"/>
+                            <constraint firstItem="RaU-s6-2AQ" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="175" id="q3A-Hh-GY6"/>
+                            <constraint firstItem="aF5-Qi-JlM" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="40" id="qC8-qS-LE1"/>
                             <constraint firstItem="AyJ-t3-Oni" firstAttribute="top" secondItem="mrR-HA-KEC" secondAttribute="top" constant="30" id="sSe-SV-i1H"/>
                             <constraint firstItem="ahW-69-W4P" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="75" id="t3z-qN-66n"/>
-                            <constraint firstItem="qyx-7Q-qJY" firstAttribute="leading" secondItem="npU-bv-OfO" secondAttribute="trailing" constant="35" id="t66-d2-Zwf"/>
                             <constraint firstItem="npU-bv-OfO" firstAttribute="top" secondItem="Lz2-Zr-HrG" secondAttribute="bottom" constant="25" id="und-UN-Mec"/>
                             <constraint firstItem="0yd-lN-Eq3" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="550" id="uyJ-TQ-TGd"/>
                             <constraint firstItem="qyx-7Q-qJY" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="645" id="w5G-Jt-nRn"/>
