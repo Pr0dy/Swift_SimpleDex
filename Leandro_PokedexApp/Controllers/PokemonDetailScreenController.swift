@@ -13,7 +13,8 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonTypeImg1: UIImageView!
     @IBOutlet weak var pokemonTypeImg2: UIImageView!
     @IBOutlet weak var pokemonSpriteImage: UIImageView!
-    
+    @IBOutlet weak var pokemonWeight: UILabel!
+    @IBOutlet weak var pokemonHeight: UILabel!
     var pokemon: PokemonModel?
     
     override func viewDidLoad() {
@@ -21,24 +22,26 @@ class PokemonDetailScreenController: UIViewController {
         self.view.backgroundColor = pokemon!.cell_color_type
         pokemonName.text = pokemon!.getPokemonName()
         pokemonNumber.text = "#\(pokemon!.number)"
-        pokemonSpriteImage.image = pokemon!.defaultSpritImage
+        pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.defaultSprite)
         pokemonTypeImg1.image = pokemon!.getCellPokemonTypeIcon(pokemonType: pokemon!.mainPokemonType)
-        
-        
+        pokemonHeight.text = "\(pokemon!.convertHeight) m"
+        pokemonWeight.text = "\(pokemon!.convertWeight) kg"
         if let secondaryType = pokemon!.secondaryPokemonType{
-           pokemonTypeImg2.image = pokemon!.getCellPokemonTypeIcon(pokemonType:secondaryType)
+           pokemonTypeImg2.image = pokemon?.getCellPokemonTypeIcon(pokemonType:secondaryType)
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func pressedShinyButton(_ sender: UIButton) {
+        
+        if sender.currentTitle == "Shinny"{
+            pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.defaultSprite)
+            sender.setTitle("Normal", for: .normal)
+        } else {
+            pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.shinySprite)
+            sender.setTitle("Shinny", for: .normal)
+        }
+        
+        
     }
-    */
-
+    
 }
