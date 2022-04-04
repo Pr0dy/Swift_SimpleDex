@@ -282,6 +282,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pokeAttack" destination="Lz2-Zr-HrG" id="aVm-zp-3qJ"/>
+                        <outlet property="pokeDefense" destination="npU-bv-OfO" id="9Mn-4Y-oqQ"/>
+                        <outlet property="pokeHP" destination="0yd-lN-Eq3" id="bO5-bF-CWI"/>
+                        <outlet property="pokeSpeed" destination="D1u-dL-rlW" id="0QC-3b-dg1"/>
                         <outlet property="pokemonHeight" destination="HYT-N1-F9x" id="7hf-IF-yyZ"/>
                         <outlet property="pokemonName" destination="WUe-gk-ZhA" id="O8m-Eu-45V"/>
                         <outlet property="pokemonNumber" destination="Ytv-V4-qS1" id="zio-4L-fd2"/>
@@ -289,6 +293,8 @@
                         <outlet property="pokemonTypeImg1" destination="414-Ga-CSf" id="hes-aE-RxK"/>
                         <outlet property="pokemonTypeImg2" destination="Axr-1L-xms" id="9qh-46-rFj"/>
                         <outlet property="pokemonWeight" destination="rxH-RE-aaf" id="L3W-kk-odp"/>
+                        <outlet property="specialPokeAttack" destination="FRc-nd-Att" id="3SM-b3-Lf9"/>
+                        <outlet property="specialPokeDefense" destination="3dg-6I-lzz" id="4Cx-xg-eFL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yA-KP-QKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

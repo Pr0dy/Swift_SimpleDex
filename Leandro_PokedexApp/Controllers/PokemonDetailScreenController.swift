@@ -12,6 +12,12 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonName: UILabel!
     @IBOutlet weak var pokemonTypeImg1: UIImageView!
     @IBOutlet weak var pokemonTypeImg2: UIImageView!
+    @IBOutlet weak var pokeHP: UILabel!
+    @IBOutlet weak var pokeDefense: UILabel!
+    @IBOutlet weak var pokeAttack: UILabel!
+    @IBOutlet weak var specialPokeAttack: UILabel!
+    @IBOutlet weak var specialPokeDefense: UILabel!
+    @IBOutlet weak var pokeSpeed: UILabel!
     @IBOutlet weak var pokemonSpriteImage: UIImageView!
     @IBOutlet weak var pokemonWeight: UILabel!
     @IBOutlet weak var pokemonHeight: UILabel!
@@ -40,8 +46,5 @@ class PokemonDetailScreenController: UIViewController {
             pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.shinySprite)
             sender.setTitle("Shinny", for: .normal)
         }
-        
-        
     }
-    
 }
