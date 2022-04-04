@@ -32,6 +32,13 @@ class PokemonDetailScreenController: UIViewController {
         pokemonTypeImg1.image = pokemon!.getCellPokemonTypeIcon(pokemonType: pokemon!.mainPokemonType)
         pokemonHeight.text = "\(pokemon!.convertHeight) m"
         pokemonWeight.text = "\(pokemon!.convertWeight) kg"
+        pokeHP.text = "\(pokemon!.stats[0].base_stat)"
+        pokeAttack.text = "\(pokemon!.stats[1].base_stat)"
+        pokeDefense.text = "\(pokemon!.stats[2].base_stat)"
+        specialPokeAttack.text = "\(pokemon!.stats[3].base_stat)"
+        specialPokeDefense.text = "\(pokemon!.stats[4].base_stat)"
+        pokeSpeed.text = "\(pokemon!.stats[5].base_stat)"
+        
         if let secondaryType = pokemon!.secondaryPokemonType{
            pokemonTypeImg2.image = pokemon?.getCellPokemonTypeIcon(pokemonType:secondaryType)
         }
