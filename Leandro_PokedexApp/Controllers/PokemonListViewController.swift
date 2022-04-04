@@ -73,7 +73,7 @@ class PokemonListViewController: UIViewController  {
                  }
              }
                  
-            if indexPath.row+1 == (filteredPokemonList!.count - 5) && indexPath.row+1 < appConstants.totalPokemons{
+            if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons{
                  performPokeRequerst(lastLoadedPokemon: indexPath.row+1)
                  }
                 
