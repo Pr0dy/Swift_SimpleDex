@@ -42,9 +42,9 @@ struct PokemonManager{
             
             if decodedData.types.count > 1{
 
-                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!)
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!, pokeStats: decodedData.stats)
             } else {
-                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!)
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!,  pokeStats: decodedData.stats)
             }
             
             return pokemon

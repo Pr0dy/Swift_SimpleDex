@@ -6,7 +6,8 @@ struct PokemonData: Codable{
     let types: [Types]
     let height: Int
     let weight: Int
-    let stats: Stats
+    let stats: [Stats]
+    
 }
 
 struct Sprites: Codable{

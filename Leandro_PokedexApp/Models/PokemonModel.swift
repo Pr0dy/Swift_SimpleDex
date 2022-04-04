@@ -8,6 +8,7 @@ struct PokemonModel{
     let mainPokemonType: String
     let secondaryPokemonType: String?
     let height: Int
+    let stats: [Stats]
     var convertHeight: String{
         get{
             return String(format: "%.1f", Float(height) / 10)
@@ -21,7 +22,7 @@ struct PokemonModel{
     }
     let shinySprite: String
     
-    init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil, height: Int, weight: Int, shinySprite: String){
+    init(pokemonName: String, pokemonNumber: Int, defaultSprite: String, mainPokemonType: String, secondaryPokemonType: String? = nil, height: Int, weight: Int, shinySprite: String, pokeStats: [Stats]){
         self.name = pokemonName
         self.number = pokemonNumber
         self.defaultSprite = defaultSprite
@@ -30,6 +31,7 @@ struct PokemonModel{
         self.height = height
         self.weight = weight
         self.shinySprite = shinySprite
+        self.stats = pokeStats
     }
     
     func getSpriteImg(spriteURL: String) -> UIImage{
