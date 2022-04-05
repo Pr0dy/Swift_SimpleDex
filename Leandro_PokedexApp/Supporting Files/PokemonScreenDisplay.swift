@@ -13,7 +13,7 @@ struct PokemonScreenDisplay{
         tableViewCell?.pokemonName.text = pokemon.getPokemonName()
         tableViewCell?.pokemonNumber.text = "#\(pokemon.number)"
         tableViewCell?.pokemonImage.image = pokemon.getSpriteImg(spriteURL: pokemon.defaultSprite)
-        tableViewCell?.backgroundColor = pokemon.cell_color_type
+        tableViewCell?.backgroundColor = pokemon.typeColor
         tableViewCell?.pokemonTypeImg1.image = pokemon.getCellPokemonTypeIcon(pokemonType: pokemon.mainPokemonType)
         tableViewCell?.pokemonTypeImg2.image = nil
         

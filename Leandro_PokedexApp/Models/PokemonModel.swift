@@ -72,7 +72,7 @@ struct PokemonModel{
     }
     
     
-    var cell_color_type: UIColor{
+    var typeColor: UIColor{
         get{
             var color: UIColor
             switch(mainPokemonType){
