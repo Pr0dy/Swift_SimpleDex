@@ -22,14 +22,17 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonWeight: UILabel!
     @IBOutlet weak var pokemonHeight: UILabel!
     var pokemon: PokemonModel?
+    var statLabels: [UILabel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = pokemon!.typeColor
+        statLabels = [pokeHP,pokeAttack,pokeDefense,specialPokeAttack,specialPokeDefense,pokeSpeed]
         displayPokemonDetails()
     }
     
     func displayPokemonDetails(){
+        
         pokemonName.text = pokemon!.getPokemonName()
         pokemonNumber.text = "#\(pokemon!.number)"
         
@@ -38,25 +41,21 @@ class PokemonDetailScreenController: UIViewController {
         
         pokemonHeight.text = "\(pokemon!.convertHeight) m"
         pokemonWeight.text = "\(pokemon!.convertWeight) kg"
-        
-        pokeHP.text = "\(pokemon!.stats[0].base_stat)"
-        pokeHP.textColor = pokemon!.typeColor
-        
-        pokeAttack.text = "\(pokemon!.stats[1].base_stat)"
-        pokeAttack.textColor = pokemon!.typeColor
-        pokeDefense.text = "\(pokemon!.stats[2].base_stat)"
-        pokeDefense.textColor = pokemon!.typeColor
-        specialPokeAttack.text = "\(pokemon!.stats[3].base_stat)"
-        specialPokeAttack.textColor = pokemon!.typeColor
-        specialPokeDefense.text = "\(pokemon!.stats[4].base_stat)"
-        specialPokeDefense.textColor = pokemon!.typeColor
-        pokeSpeed.text = "\(pokemon!.stats[5].base_stat)"
-        pokeSpeed.textColor = pokemon!.typeColor
-        
-        
-        
+
+        displayStats()
+  
         if let secondaryType = pokemon!.secondaryPokemonType{
            pokemonTypeImg2.image = pokemon?.getCellPokemonTypeIcon(pokemonType:secondaryType)
+        }
+    }
+    
+    func displayStats(){
+        var counter = 0
+        
+        for label in statLabels!{
+            label.text = "\(pokemon!.stats[counter].base_stat)"
+            label.textColor = pokemon!.typeColor
+            counter += 1
         }
     }
  
