@@ -79,7 +79,6 @@
 				D27AE3C827DB6E6000A879C4 /* Views */,
 				D27AE3C127DB626500A879C4 /* Info.plist */,
 				D2D446EB27E762EE002ADAB3 /* Supporting Files */,
-				D2C11BB727FC7A4B00C791AA /* PokemonScreenDisplay.swift */,
 			);
 			path = Leandro_PokedexApp;
 			sourceTree = "<group>";
@@ -116,6 +115,7 @@
 		D2D446EB27E762EE002ADAB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D2C11BB727FC7A4B00C791AA /* PokemonScreenDisplay.swift */,
 				D2D446E927E762D6002ADAB3 /* AppConstants.swift */,
 				D2C425A627E7DC3900A7F333 /* PokemonCell.swift */,
 				D27AE3BC27DB626500A879C4 /* Assets.xcassets */,

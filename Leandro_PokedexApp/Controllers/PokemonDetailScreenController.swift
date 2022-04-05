@@ -26,6 +26,10 @@ class PokemonDetailScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = pokemon!.cell_color_type
+        displayPokemonDetails()
+    }
+    
+    func displayPokemonDetails(){
         pokemonName.text = pokemon!.getPokemonName()
         pokemonNumber.text = "#\(pokemon!.number)"
         pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.defaultSprite)
