@@ -44,6 +44,7 @@ class PokemonDetailScreenController: UIViewController {
         }
     }
     
+    
     @IBAction func pressedShinyButton(_ sender: UIButton) {
         
         if sender.currentTitle == "Shinny"{

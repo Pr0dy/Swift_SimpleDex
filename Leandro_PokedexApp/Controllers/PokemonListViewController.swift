@@ -10,6 +10,7 @@ class PokemonListViewController: UIViewController  {
     var pokemonDictList = [Int:PokemonModel]()
     var filteredPokemonList: [Int:PokemonModel]?
     var pokemonDetails: PokemonModel?
+    var screenDisplayer = PokemonScreenDisplay()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,7 @@ class PokemonListViewController: UIViewController  {
         pokemonManager.delegate = self
         searchBar.delegate = self
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
+        
         
             filteredPokemonList = pokemonDictList
                 
@@ -51,11 +53,13 @@ class PokemonListViewController: UIViewController  {
          
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-             cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
+            cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
 
             cellToDisplay?.selectionStyle = .none
             
              if let pokemon = filteredPokemonList![indexPath.row+1]{
+                 //screenDisplayer.displayPokemonInTableViewCell(pokemon: pokemon, tableViewCell: )
+                 
                  cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
                  cellToDisplay?.pokemonNumber.text = "#\(pokemon.number)"
                  cellToDisplay?.pokemonImage.image = pokemon.getSpriteImg(spriteURL: pokemon.defaultSprite)
@@ -65,7 +69,8 @@ class PokemonListViewController: UIViewController  {
                  
                  if let secondaryType = pokemon.secondaryPokemonType{
                      cellToDisplay?.pokemonTypeImg2.image = pokemon.getCellPokemonTypeIcon(pokemonType:secondaryType)
-                 }
+                 
+             }
              }
              
             return cellToDisplay!
