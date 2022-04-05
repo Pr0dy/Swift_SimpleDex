@@ -58,19 +58,7 @@ class PokemonListViewController: UIViewController  {
             cellToDisplay?.selectionStyle = .none
             
              if let pokemon = filteredPokemonList![indexPath.row+1]{
-                 //screenDisplayer.displayPokemonInTableViewCell(pokemon: pokemon, tableViewCell: )
-                 
-                 cellToDisplay?.pokemonName.text = pokemon.getPokemonName()
-                 cellToDisplay?.pokemonNumber.text = "#\(pokemon.number)"
-                 cellToDisplay?.pokemonImage.image = pokemon.getSpriteImg(spriteURL: pokemon.defaultSprite)
-                 cellToDisplay?.backgroundColor = pokemon.cell_color_type
-                 cellToDisplay?.pokemonTypeImg1.image = pokemon.getCellPokemonTypeIcon(pokemonType: pokemon.mainPokemonType)
-                 cellToDisplay?.pokemonTypeImg2.image = nil
-                 
-                 if let secondaryType = pokemon.secondaryPokemonType{
-                     cellToDisplay?.pokemonTypeImg2.image = pokemon.getCellPokemonTypeIcon(pokemonType:secondaryType)
-                 
-             }
+                 screenDisplayer.displayPokemonInTableViewCell(pokemon: pokemon, tableViewCell: cellToDisplay)
              }
              
             return cellToDisplay!
@@ -94,35 +82,42 @@ extension PokemonListViewController: PokemonManagerDelegate{
 
 
 extension PokemonListViewController: UISearchBarDelegate{
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        var searchResults = [Int:PokemonModel]()
-        var counter = 1
         
         if searchText == ""{
             filteredPokemonList = pokemonDictList
         }
         
         else{
-            if CharacterSet(charactersIn: searchText).isSubset(of: CharacterSet.decimalDigits){
-                searchResults[1] = pokemonDictList[Int(searchText)!]
-            }
-            
-            else{
-                for entry in Array(pokemonDictList.keys).sorted(by:<){
-                    if pokemonDictList[entry]!.name.lowercased().contains(searchText.lowercased())
-                        || pokemonDictList[entry]!.mainPokemonType.lowercased() == searchText.lowercased()
-                        || pokemonDictList[entry]!.secondaryPokemonType?.lowercased() == searchText.lowercased(){
-                        searchResults[counter] = pokemonDictList[entry]
-                        counter+=1
-                    }
-                }
-            }
-            
-             filteredPokemonList = searchResults
+            fetchSearchedPokemon(search: searchText)
         }
         self.tableView.reloadData()
     }
+    
+    
+    func fetchSearchedPokemon(search searchText: String){
+        var searchResults = [Int:PokemonModel]()
+        var counter = 1
+        
+        if CharacterSet(charactersIn: searchText).isSubset(of: CharacterSet.decimalDigits){
+            searchResults[1] = pokemonDictList[Int(searchText)!]
+        }
+        
+        else{
+            for entry in Array(pokemonDictList.keys).sorted(by:<){
+                if pokemonDictList[entry]!.name.lowercased().contains(searchText.lowercased())
+                    || pokemonDictList[entry]!.mainPokemonType.lowercased() == searchText.lowercased()
+                    || pokemonDictList[entry]!.secondaryPokemonType?.lowercased() == searchText.lowercased(){
+                    searchResults[counter] = pokemonDictList[entry]
+                    counter+=1
+                }
+            }
+        }
+        
+        filteredPokemonList = searchResults
+    }
+    
+    
 }
 
 
