@@ -19,12 +19,16 @@ class PokemonListViewController: UIViewController  {
         pokemonManager.delegate = self
         searchBar.delegate = self
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
-        
-        
         filteredPokemonList = pokemonDictList
-                
-        for i in 1...appConstants.totalPokemons{
-            pokemonManager.fetchPokemon(number: i)
+        performPokeRequerst(lastLoadedPokemon: 1)
+    }
+    
+    func performPokeRequerst(lastLoadedPokemon: Int) {
+        let lastPokemonToLoad = lastLoadedPokemon + appConstants.pokemonScrollingIncrement
+        for pokemonIndex in lastLoadedPokemon...lastPokemonToLoad{
+            if pokemonIndex <= appConstants.totalPokemons{
+                pokemonManager.fetchPokemon(number: pokemonIndex)
+            }
         }
     }
 }
@@ -60,11 +64,15 @@ class PokemonListViewController: UIViewController  {
              if let pokemon = filteredPokemonList![indexPath.row+1]{
                  screenDisplayer.displayPokemonInTableViewCell(pokemon: pokemon, tableViewCell: cellToDisplay)
              }
+                 
+            if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons{
+                 performPokeRequerst(lastLoadedPokemon: indexPath.row+1)
+                 }
+                
              
             return cellToDisplay!
         }
     }
-
 
 extension PokemonListViewController: PokemonManagerDelegate{
     func didUpdatePokemon(pokemon: PokemonModel) {
