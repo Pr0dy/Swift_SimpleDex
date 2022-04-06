@@ -21,6 +21,7 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonSpriteImage: UIImageView!
     @IBOutlet weak var pokemonWeight: UILabel!
     @IBOutlet weak var pokemonHeight: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     var pokemon: PokemonModel?
     var statLabels: [UILabel]?
     
@@ -72,7 +73,14 @@ class PokemonDetailScreenController: UIViewController {
     }
     
     @IBAction func favoritePressed(_ sender: Any) {
-        
+        if pokemon!.isFavortite == false{
+            favoriteButton.tintColor = UIColor.systemYellow
+            //post request
+            pokemon!.isFavortite = true
+        } else {
+            favoriteButton.tintColor = UIColor.systemGray
+            pokemon!.isFavortite = false
+        }
     }
     
     
