@@ -70,4 +70,10 @@ class PokemonDetailScreenController: UIViewController {
             sender.setTitle("Shinny", for: .normal)
         }
     }
+    
+    @IBAction func favoritePressed(_ sender: Any) {
+        
+    }
+    
+    
 }

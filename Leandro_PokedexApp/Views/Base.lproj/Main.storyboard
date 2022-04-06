@@ -102,6 +102,9 @@
                                 <color key="tintColor" red="0.98097866769999997" green="0.78220450880000003" blue="0.017933132130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Favorite"/>
+                                <connections>
+                                    <action selector="favoritePressed:" destination="oza-sa-pbC" eventType="touchUpInside" id="Xw9-mu-41q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyJ-t3-Oni">
                                 <rect key="frame" x="152" y="30" width="95" height="30"/>
@@ -112,6 +115,9 @@
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Shinny"/>
+                                <connections>
+                                    <action selector="pressedShinyButton:" destination="oza-sa-pbC" eventType="touchUpInside" id="HVU-yG-NO4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYT-N1-F9x">
                                 <rect key="frame" x="117" y="457" width="42" height="21"/>

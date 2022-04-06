@@ -4,6 +4,7 @@ import UIKit
 struct PokemonModel{
     var name: String
     let number: Int
+    var isFavortite: Bool
     let defaultSprite: String
     let mainPokemonType: String
     let secondaryPokemonType: String?
@@ -32,6 +33,7 @@ struct PokemonModel{
         self.weight = weight
         self.shinySprite = shinySprite
         self.stats = pokeStats
+        self.isFavortite = false
     }
     
     func getSpriteImg(spriteURL: String) -> UIImage{
