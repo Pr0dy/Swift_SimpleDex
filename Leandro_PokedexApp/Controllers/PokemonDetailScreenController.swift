@@ -28,8 +28,17 @@ class PokemonDetailScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = pokemon!.typeColor
+        favoriteButtonColor(isFavorite: pokemon!.isFavortite)
         statLabels = [pokeHP,pokeAttack,pokeDefense,specialPokeAttack,specialPokeDefense,pokeSpeed]
         displayPokemonDetails()
+    }
+    
+    func favoriteButtonColor(isFavorite: Bool){
+        if isFavorite{
+            favoriteButton.tintColor = UIColor.systemYellow
+        } else {
+            favoriteButton.tintColor = UIColor.systemGray
+        }
     }
     
     func displayPokemonDetails(){
@@ -74,14 +83,11 @@ class PokemonDetailScreenController: UIViewController {
     
     @IBAction func favoritePressed(_ sender: Any) {
         if pokemon!.isFavortite == false{
-            favoriteButton.tintColor = UIColor.systemYellow
-            //post request
             pokemon!.isFavortite = true
+            favoriteButtonColor(isFavorite: true)
         } else {
-            favoriteButton.tintColor = UIColor.systemGray
             pokemon!.isFavortite = false
+            favoriteButtonColor(isFavorite: false)
         }
     }
-    
-    
 }

@@ -8,8 +8,6 @@
 import UIKit
 
 class PokemonCell: UITableViewCell {
-
-
     @IBOutlet weak var pokemonNumber: UILabel!
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var pokemonName: UILabel!
