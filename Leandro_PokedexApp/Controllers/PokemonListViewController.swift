@@ -11,6 +11,7 @@ class PokemonListViewController: UIViewController  {
     var filteredPokemonList: [Int:PokemonModel]?
     var pokemonDetails: PokemonModel?
     var screenDisplayer = PokemonScreenDisplay()
+    var searching: Bool?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class PokemonListViewController: UIViewController  {
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
         filteredPokemonList = pokemonDictList
         performPokeRequerst(lastLoadedPokemon: 1)
+        searching = false
     }
     
     func performPokeRequerst(lastLoadedPokemon: Int) {
@@ -79,7 +81,9 @@ extension PokemonListViewController: PokemonManagerDelegate{
         DispatchQueue.main.async {
             self.pokemonDictList[pokemon.number] = pokemon
             self.filteredPokemonList = self.pokemonDictList
-            self.tableView.reloadData()
+            if self.searching == false{
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -91,9 +95,11 @@ extension PokemonListViewController: PokemonManagerDelegate{
 
 extension PokemonListViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searching = true
         
         if searchText == ""{
             filteredPokemonList = pokemonDictList
+            searching = false
         }
         
         else{
