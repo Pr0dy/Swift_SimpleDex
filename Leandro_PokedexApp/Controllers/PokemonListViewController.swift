@@ -38,7 +38,7 @@ class PokemonListViewController: UIViewController  {
 {
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            pokemonDetails = pokemonDictList[indexPath.row+1]
+            pokemonDetails = filteredPokemonList?[indexPath.row+1]
             self.performSegue(withIdentifier: appConstants.detailScreenSegueIdentifier, sender: self)
         }
         
@@ -80,9 +80,9 @@ extension PokemonListViewController: PokemonManagerDelegate{
     func didUpdatePokemon(pokemon: PokemonModel) {
         DispatchQueue.main.async {
             self.pokemonDictList[pokemon.number] = pokemon
-            self.filteredPokemonList = self.pokemonDictList
             if self.searching == false{
-                self.tableView.reloadData()
+               self.filteredPokemonList = self.pokemonDictList
+               self.tableView.reloadData()
             }
         }
     }
@@ -130,8 +130,6 @@ extension PokemonListViewController: UISearchBarDelegate{
         
         filteredPokemonList = searchResults
     }
-    
-    
 }
 
 
