@@ -4,8 +4,10 @@ import CoreData
 class PokemonListViewController: UIViewController  {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    
     var pokemonManager = PokemonManager()
     var appConstants = AppConstants()
+    let favoritePokemon = FavoritePokemonManager()
     var cellToDisplay: PokemonCell?
     var pokemonDictList = [Int:PokemonModel]()
     var filteredPokemonList: [Int:PokemonModel]?
@@ -36,6 +38,7 @@ class PokemonListViewController: UIViewController  {
     
     
     @IBAction func pressedFavoritePokemonButton(_ sender: UIButton) {
+        
     }
     
     

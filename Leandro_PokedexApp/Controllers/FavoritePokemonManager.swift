@@ -9,10 +9,10 @@ import Foundation
 
 class FavoritePokemonManager{
     
-    var favoritePokemonList: [Int:PokemonModel]?
+    var favoritePokemonList = [Int:PokemonModel]()
     
     func addFavoritePokemonToList(pokemon: PokemonModel, index: Int){
-        
+        favoritePokemonList[index] = pokemon
     }
     
     func removeFavoritePokemonToList(index: Int){

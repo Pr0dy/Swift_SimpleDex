@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D22135DD28007EA60003FDD4 /* FavoritePokemonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22135DC28007EA60003FDD4 /* FavoritePokemonManager.swift */; };
 		D27AE3B427DB626400A879C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27AE3B327DB626400A879C4 /* AppDelegate.swift */; };
 		D27AE3B627DB626400A879C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27AE3B527DB626400A879C4 /* SceneDelegate.swift */; };
 		D27AE3BB27DB626400A879C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27AE3B927DB626400A879C4 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D22135DC28007EA60003FDD4 /* FavoritePokemonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePokemonManager.swift; sourceTree = "<group>"; };
 		D27AE3B027DB626400A879C4 /* Leandro_PokedexApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leandro_PokedexApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27AE3B327DB626400A879C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D27AE3B527DB626400A879C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				D2A7755827E34CE300F3515B /* PokemonListViewController.swift */,
 				D2AB50D027F6042C00D9C0D7 /* PokemonDetailScreenController.swift */,
+				D22135DC28007EA60003FDD4 /* FavoritePokemonManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			files = (
 				D2D446EA27E762D6002ADAB3 /* AppConstants.swift in Sources */,
 				D2C425A427E777C500A7F333 /* PokemonData.swift in Sources */,
+				D22135DD28007EA60003FDD4 /* FavoritePokemonManager.swift in Sources */,
 				D27AE3B427DB626400A879C4 /* AppDelegate.swift in Sources */,
 				D2C425A327E777C500A7F333 /* PokemonManager.swift in Sources */,
 				D2C425A527E777C500A7F333 /* PokemonModel.swift in Sources */,
