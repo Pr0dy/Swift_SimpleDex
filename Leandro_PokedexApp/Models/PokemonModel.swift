@@ -4,7 +4,8 @@ import UIKit
 class PokemonModel{
     var name: String
     let number: Int
-    var isFavortite = false
+    var isFavorite = false
+    var changedFavorite = false
     let defaultSprite: String
     let mainPokemonType: String
     let secondaryPokemonType: String?
