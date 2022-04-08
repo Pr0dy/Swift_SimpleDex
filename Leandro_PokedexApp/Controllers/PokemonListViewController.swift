@@ -33,6 +33,12 @@ class PokemonListViewController: UIViewController  {
             }
         }
     }
+    
+    
+    @IBAction func pressedFavoritePokemonButton(_ sender: UIButton) {
+    }
+    
+    
 }
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
