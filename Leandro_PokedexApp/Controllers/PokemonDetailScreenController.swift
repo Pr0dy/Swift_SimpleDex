@@ -21,14 +21,24 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonSpriteImage: UIImageView!
     @IBOutlet weak var pokemonWeight: UILabel!
     @IBOutlet weak var pokemonHeight: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     var pokemon: PokemonModel?
     var statLabels: [UILabel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = pokemon!.typeColor
+        favoriteButtonColor(isFavorite: pokemon!.isFavorite)
         statLabels = [pokeHP,pokeAttack,pokeDefense,specialPokeAttack,specialPokeDefense,pokeSpeed]
         displayPokemonDetails()
+    }
+    
+    func favoriteButtonColor(isFavorite: Bool){
+        if isFavorite{
+            favoriteButton.tintColor = UIColor.systemYellow
+        } else {
+            favoriteButton.tintColor = UIColor.systemGray
+        }
     }
     
     func displayPokemonDetails(){
@@ -68,6 +78,18 @@ class PokemonDetailScreenController: UIViewController {
         } else {
             pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.shinySprite)
             sender.setTitle("Shinny", for: .normal)
+        }
+    }
+    
+    @IBAction func favoritePressed(_ sender: Any) {
+        pokemon!.changedFavorite = true
+        
+        if pokemon!.isFavorite == false{
+            pokemon!.isFavorite = true
+            favoriteButtonColor(isFavorite: true)
+        } else {
+            pokemon!.isFavorite = false
+            favoriteButtonColor(isFavorite: false)
         }
     }
 }

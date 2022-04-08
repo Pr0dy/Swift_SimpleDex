@@ -99,9 +99,12 @@
                                     <constraint firstAttribute="width" constant="95" id="Ujp-Gy-r3D"/>
                                     <constraint firstAttribute="height" constant="30" id="e8g-a7-HWA"/>
                                 </constraints>
-                                <color key="tintColor" red="0.98097866769999997" green="0.78220450880000003" blue="0.017933132130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemGray2Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Favorite"/>
+                                <connections>
+                                    <action selector="favoritePressed:" destination="oza-sa-pbC" eventType="touchUpInside" id="Xw9-mu-41q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyJ-t3-Oni">
                                 <rect key="frame" x="152" y="30" width="95" height="30"/>
@@ -112,6 +115,9 @@
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Shinny"/>
+                                <connections>
+                                    <action selector="pressedShinyButton:" destination="oza-sa-pbC" eventType="touchUpInside" id="HVU-yG-NO4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYT-N1-F9x">
                                 <rect key="frame" x="117" y="457" width="42" height="21"/>
@@ -230,7 +236,6 @@
                             <constraint firstItem="F4w-X5-yma" firstAttribute="leading" secondItem="HYT-N1-F9x" secondAttribute="trailing" constant="50" id="8d8-jH-ZGp"/>
                             <constraint firstItem="FRc-nd-Att" firstAttribute="top" secondItem="QTA-F6-0xh" secondAttribute="bottom" constant="70" id="8my-uV-XgC"/>
                             <constraint firstItem="3dg-6I-lzz" firstAttribute="top" secondItem="FRc-nd-Att" secondAttribute="bottom" constant="28" id="CHa-kj-6ny"/>
-                            <constraint firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="448" id="Chl-Cb-TU9"/>
                             <constraint firstItem="rxH-RE-aaf" firstAttribute="top" secondItem="mrR-HA-KEC" secondAttribute="top" constant="457" id="DzM-f8-nmp"/>
                             <constraint firstItem="QTA-F6-0xh" firstAttribute="top" secondItem="lsG-0U-3e2" secondAttribute="topMargin" constant="130" id="Gcw-96-dA0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Axr-1L-xms" secondAttribute="trailing" constant="30" id="HWn-e0-5SW"/>
@@ -270,7 +275,6 @@
                             <constraint firstItem="uJO-di-4uR" firstAttribute="leading" secondItem="Lz2-Zr-HrG" secondAttribute="trailing" constant="25" id="rf6-pR-23U"/>
                             <constraint firstItem="aF5-Qi-JlM" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="40" id="rk0-6J-W9l"/>
                             <constraint firstItem="AyJ-t3-Oni" firstAttribute="top" secondItem="mrR-HA-KEC" secondAttribute="top" constant="30" id="sSe-SV-i1H"/>
-                            <constraint firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="75" id="t3z-qN-66n"/>
                             <constraint firstItem="D1u-dL-rlW" firstAttribute="leading" secondItem="qyx-7Q-qJY" secondAttribute="trailing" constant="85" id="x1E-Ae-gGq"/>
                             <constraint firstItem="Ytv-V4-qS1" firstAttribute="leading" secondItem="mrR-HA-KEC" secondAttribute="leading" constant="40" id="xRm-JP-oDB"/>
                             <constraint firstItem="V3d-XO-DpF" firstAttribute="top" secondItem="WUe-gk-ZhA" secondAttribute="bottom" constant="200" id="xXI-aO-Mm4"/>
@@ -281,6 +285,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="favoriteButton" destination="Hvb-Bh-48F" id="iDm-d3-gT3"/>
                         <outlet property="pokeAttack" destination="Lz2-Zr-HrG" id="aVm-zp-3qJ"/>
                         <outlet property="pokeDefense" destination="npU-bv-OfO" id="9Mn-4Y-oqQ"/>
                         <outlet property="pokeHP" destination="0yd-lN-Eq3" id="bO5-bF-CWI"/>
@@ -325,6 +330,9 @@
         <image name="ruler" catalog="system" width="128" height="57"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

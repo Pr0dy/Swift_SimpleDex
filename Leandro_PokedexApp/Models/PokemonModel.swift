@@ -1,9 +1,11 @@
 import Foundation
 import UIKit
 
-struct PokemonModel{
+class PokemonModel{
     var name: String
     let number: Int
+    var isFavorite = false
+    var changedFavorite = false
     let defaultSprite: String
     let mainPokemonType: String
     let secondaryPokemonType: String?
