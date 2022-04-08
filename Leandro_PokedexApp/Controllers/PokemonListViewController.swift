@@ -63,13 +63,20 @@ class PokemonListViewController: UIViewController  {
             
              if let pokemon = filteredPokemonList![indexPath.row+1]{
                  screenDisplayer.displayPokemonInTableViewCell(pokemon: pokemon, tableViewCell: cellToDisplay)
+                 
+                 if pokemon.isFavortite{
+                     cellToDisplay?.starIconCell.image = UIImage(named: "starIcon")
+                 }
+                 else{
+                     cellToDisplay?.starIconCell.image = nil
+                 }
              }
+             
                  
             if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons{
                  performPokeRequerst(lastLoadedPokemon: indexPath.row+1)
                  }
                 
-             
             return cellToDisplay!
         }
     }
