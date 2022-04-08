@@ -81,9 +81,7 @@ class PokemonDetailScreenController: UIViewController {
         }
     }
     
-    @IBAction func favoritePressed(_ sender: Any) {
-        pokemon!.changedFavorite = true
-        
+    @IBAction func favoritePressed(_ sender: Any) {        
         if pokemon!.isFavorite == false{
             pokemon!.isFavorite = true
             favoriteButtonColor(isFavorite: true)
