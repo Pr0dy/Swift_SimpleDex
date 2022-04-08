@@ -117,9 +117,8 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvb-Bh-48F">
-                                <rect key="frame" x="32" y="30" width="95" height="30"/>
+                                <rect key="frame" x="32" y="30" width="75.5" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="Ujp-Gy-r3D"/>
                                     <constraint firstAttribute="height" constant="30" id="e8g-a7-HWA"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemGray2Color"/>
@@ -130,10 +129,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyJ-t3-Oni">
-                                <rect key="frame" x="152" y="30" width="95" height="30"/>
+                                <rect key="frame" x="132.5" y="30" width="67.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VFd-Uh-tvE"/>
-                                    <constraint firstAttribute="width" constant="95" id="m6q-Xa-sJt"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <state key="normal" title="Button"/>

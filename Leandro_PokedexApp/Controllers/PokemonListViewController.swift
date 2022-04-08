@@ -36,6 +36,15 @@ class PokemonListViewController: UIViewController  {
     
     
     @IBAction func pressedFavoritePokemonButton(_ sender: UIButton) {
+        var count = 0
+        filteredPokemonList = nil
+        
+        for entry in Array(pokemonDictList.keys).sorted(by:<){
+            if pokemonDictList[entry]!.isFavorite{
+                filteredPokemonList![count] = pokemonDictList[entry]
+                
+            }
+        }
     }
     
     
