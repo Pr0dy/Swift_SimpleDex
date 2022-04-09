@@ -13,8 +13,9 @@ class PokemonListViewController: UIViewController  {
     var filteredPokemonList: [Int:PokemonModel]?
     var pokemonDetails: PokemonModel?
     var screenDisplayer = PokemonScreenDisplay()
-    var searching: Bool?
-        
+    var searching = false
+    var isFavoriteListDisplayed = false
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -24,7 +25,6 @@ class PokemonListViewController: UIViewController  {
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
         filteredPokemonList = pokemonDictList
         performPokeRequerst(lastLoadedPokemon: 1)
-        searching = false
     }
     
     func performPokeRequerst(lastLoadedPokemon: Int) {
@@ -38,7 +38,21 @@ class PokemonListViewController: UIViewController  {
     
     
     @IBAction func pressedFavoritePokemonButton(_ sender: UIButton) {
+
+        var count = 1
+        searching = true
+        var searchResults = [Int:PokemonModel]()
         
+        for entry in Array(pokemonDictList.keys).sorted(by:<){
+            if pokemonDictList[entry]!.isFavorite{
+                searchResults[count] = pokemonDictList[entry]
+                count+=1
+            }
+        }
+        
+        filteredPokemonList = searchResults
+        self.tableView.reloadData()
+       
     }
     
     
@@ -82,7 +96,7 @@ class PokemonListViewController: UIViewController  {
              }
              
                  
-            if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons{
+            if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons && searching == false{
                  performPokeRequerst(lastLoadedPokemon: indexPath.row+1)
                  }
                 
