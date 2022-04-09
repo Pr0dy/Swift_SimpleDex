@@ -39,18 +39,29 @@ class PokemonListViewController: UIViewController  {
     
     @IBAction func pressedFavoritePokemonButton(_ sender: UIButton) {
 
-        var count = 1
-        searching = true
-        var searchResults = [Int:PokemonModel]()
-        
-        for entry in Array(pokemonDictList.keys).sorted(by:<){
-            if pokemonDictList[entry]!.isFavorite{
-                searchResults[count] = pokemonDictList[entry]
-                count+=1
+        if isFavoriteListDisplayed == false{
+            isFavoriteListDisplayed = true
+            
+            var count = 1
+            searching = true
+            var searchResults = [Int:PokemonModel]()
+            
+            for entry in Array(pokemonDictList.keys).sorted(by:<){
+                if pokemonDictList[entry]!.isFavorite{
+                    searchResults[count] = pokemonDictList[entry]
+                    count+=1
+                }
             }
+            
+            filteredPokemonList = searchResults
         }
         
-        filteredPokemonList = searchResults
+        else {
+            filteredPokemonList = pokemonDictList
+            isFavoriteListDisplayed = false
+            searching = false
+        }
+        
         self.tableView.reloadData()
        
     }
