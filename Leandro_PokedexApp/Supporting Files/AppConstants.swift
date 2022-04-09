@@ -7,6 +7,6 @@ struct AppConstants{
      let detailScreenSegueIdentifier = "toPokemonDetailScreen"
     
      let totalPokemons = 898
-     let pokemonScrollingIncrement = 20
+     let pokemonScrollingIncrement = 15
      let cellHeight = 100
 }

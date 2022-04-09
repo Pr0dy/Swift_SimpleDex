@@ -24,6 +24,7 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     var pokemon: PokemonModel?
     var statLabels: [UILabel]?
+    var tableView: UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,5 +90,6 @@ class PokemonDetailScreenController: UIViewController {
             pokemon!.isFavorite = false
             favoriteButtonColor(isFavorite: false)
         }
+        self.tableView?.reloadData()
     }
 }

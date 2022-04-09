@@ -4,6 +4,7 @@ import CoreData
 class PokemonListViewController: UIViewController  {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    
     var pokemonManager = PokemonManager()
     var appConstants = AppConstants()
     var cellToDisplay: PokemonCell?
@@ -11,8 +12,9 @@ class PokemonListViewController: UIViewController  {
     var filteredPokemonList: [Int:PokemonModel]?
     var pokemonDetails: PokemonModel?
     var screenDisplayer = PokemonScreenDisplay()
-    var searching: Bool?
-        
+    var searching = false
+    var isFavoriteListDisplayed = false
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -22,7 +24,6 @@ class PokemonListViewController: UIViewController  {
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
         filteredPokemonList = pokemonDictList
         performPokeRequerst(lastLoadedPokemon: 1)
-        searching = false
     }
     
     func performPokeRequerst(lastLoadedPokemon: Int) {
@@ -36,15 +37,32 @@ class PokemonListViewController: UIViewController  {
     
     
     @IBAction func pressedFavoritePokemonButton(_ sender: UIButton) {
-        var count = 0
-        filteredPokemonList = nil
-        
-        for entry in Array(pokemonDictList.keys).sorted(by:<){
-            if pokemonDictList[entry]!.isFavorite{
-                filteredPokemonList![count] = pokemonDictList[entry]
-                
+
+        if isFavoriteListDisplayed == false{
+            isFavoriteListDisplayed = true
+            
+            var count = 1
+            searching = true
+            var searchResults = [Int:PokemonModel]()
+            
+            for entry in Array(pokemonDictList.keys).sorted(by:<){
+                if pokemonDictList[entry]!.isFavorite{
+                    searchResults[count] = pokemonDictList[entry]
+                    count+=1
+                }
             }
+            
+            filteredPokemonList = searchResults
         }
+        
+        else {
+            filteredPokemonList = pokemonDictList
+            isFavoriteListDisplayed = false
+            searching = false
+        }
+        
+        self.tableView.reloadData()
+       
     }
     
     
@@ -61,6 +79,7 @@ class PokemonListViewController: UIViewController  {
             if segue.identifier == appConstants.detailScreenSegueIdentifier{
                 let nextVC = segue.destination as! PokemonDetailScreenController
                 nextVC.pokemon = pokemonDetails
+                nextVC.tableView = self.tableView
             }
         }
         
@@ -88,7 +107,7 @@ class PokemonListViewController: UIViewController  {
              }
              
                  
-            if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons{
+            if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons && searching == false{
                  performPokeRequerst(lastLoadedPokemon: indexPath.row+1)
                  }
                 
