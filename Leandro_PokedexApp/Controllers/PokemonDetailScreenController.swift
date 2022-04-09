@@ -1,10 +1,3 @@
-//
-//  PokemonDetailScreenController.swift
-//  Leandro_PokedexApp
-//
-//  Created by leandro.banha on 31/03/2022.
-//
-
 import UIKit
 
 class PokemonDetailScreenController: UIViewController {

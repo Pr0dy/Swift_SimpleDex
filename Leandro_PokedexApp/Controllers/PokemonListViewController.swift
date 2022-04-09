@@ -23,10 +23,10 @@ class PokemonListViewController: UIViewController  {
         searchBar.delegate = self
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
         filteredPokemonList = pokemonDictList
-        performPokeRequerst(lastLoadedPokemon: 1)
+        performPokeRequest(lastLoadedPokemon: 1)
     }
     
-    func performPokeRequerst(lastLoadedPokemon: Int) {
+    func performPokeRequest(lastLoadedPokemon: Int) {
         let lastPokemonToLoad = lastLoadedPokemon + appConstants.pokemonScrollingIncrement
         for pokemonIndex in lastLoadedPokemon...lastPokemonToLoad{
             if pokemonIndex <= appConstants.totalPokemons{
@@ -108,7 +108,7 @@ class PokemonListViewController: UIViewController  {
              
                  
             if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons && searching == false{
-                 performPokeRequerst(lastLoadedPokemon: indexPath.row+1)
+                 performPokeRequest(lastLoadedPokemon: indexPath.row+1)
                  }
                 
             return cellToDisplay!
