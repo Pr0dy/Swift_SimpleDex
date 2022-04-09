@@ -7,7 +7,6 @@ class PokemonListViewController: UIViewController  {
     
     var pokemonManager = PokemonManager()
     var appConstants = AppConstants()
-    let favoritePokemon = FavoritePokemonManager()
     var cellToDisplay: PokemonCell?
     var pokemonDictList = [Int:PokemonModel]()
     var filteredPokemonList: [Int:PokemonModel]?
@@ -80,6 +79,7 @@ class PokemonListViewController: UIViewController  {
             if segue.identifier == appConstants.detailScreenSegueIdentifier{
                 let nextVC = segue.destination as! PokemonDetailScreenController
                 nextVC.pokemon = pokemonDetails
+                nextVC.tableView = self.tableView
             }
         }
         
