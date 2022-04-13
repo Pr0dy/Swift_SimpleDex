@@ -109,7 +109,7 @@ class PokemonListViewController: UIViewController  {
                  
             if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons && searching == false{
                  performPokeRequest(lastLoadedPokemon: indexPath.row+1)
-                 }
+            }
                 
             return cellToDisplay!
         }
