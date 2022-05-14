@@ -64,8 +64,7 @@ class PokemonListViewController: UIViewController  {
         self.tableView.reloadData()
        
     }
-    
-    
+
 }
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
