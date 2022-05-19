@@ -18,6 +18,7 @@ class PokemonDetailScreenController: UIViewController {
     var pokemon: PokemonModel?
     var statLabels: [UILabel]?
     var tableView: UITableView?
+    let dataContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +28,8 @@ class PokemonDetailScreenController: UIViewController {
         displayPokemonDetails()
     }
     
-    func favoriteButtonColor(isFavorite: Bool){
-        if isFavorite{
-            favoriteButton.tintColor = UIColor.systemYellow
-        } else {
-            favoriteButton.tintColor = UIColor.systemGray
-        }
-    }
-    
+    // MARK: - Pokemon stats methods
+        
     func displayPokemonDetails(){
         
         pokemonName.text = pokemon!.getPokemonName()
@@ -62,8 +57,31 @@ class PokemonDetailScreenController: UIViewController {
             counter += 1
         }
     }
- 
     
+    // MARK: - Favorite Pokemon Methods
+    
+    @IBAction func favoritePressed(_ sender: Any) {        
+        if pokemon!.isFavorite == false{
+            pokemon!.isFavorite = true
+            
+            
+            
+            favoriteButtonColor(isFavorite: true)
+        } else {
+            pokemon!.isFavorite = false
+            favoriteButtonColor(isFavorite: false)
+        }
+        self.tableView?.reloadData()
+    }
+    
+    func favoriteButtonColor(isFavorite: Bool){
+        if isFavorite{
+            favoriteButton.tintColor = UIColor.systemYellow
+        } else {
+            favoriteButton.tintColor = UIColor.systemGray
+        }
+    }
+
     @IBAction func pressedShinyButton(_ sender: UIButton) {
         
         if sender.currentTitle == "Shinny"{
@@ -75,14 +93,4 @@ class PokemonDetailScreenController: UIViewController {
         }
     }
     
-    @IBAction func favoritePressed(_ sender: Any) {        
-        if pokemon!.isFavorite == false{
-            pokemon!.isFavorite = true
-            favoriteButtonColor(isFavorite: true)
-        } else {
-            pokemon!.isFavorite = false
-            favoriteButtonColor(isFavorite: false)
-        }
-        self.tableView?.reloadData()
-    }
 }

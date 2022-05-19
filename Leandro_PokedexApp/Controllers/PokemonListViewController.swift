@@ -35,15 +35,15 @@ class PokemonListViewController: UIViewController  {
         }
     }
     
-    // MARK: - Favorite Pokemon Methods
+    // MARK: - Favorite Pokemon Search Methods
     
     @IBAction func pressedFavoritePokemonButton(_ sender: UIButton) {
 
         if isFavoriteListDisplayed == false{
             isFavoriteListDisplayed = true
+            searching = true
             
             var count = 1
-            searching = true
             var searchResults = [Int:PokemonModel]()
             
             for entry in Array(pokemonDictList.keys).sorted(by:<){
