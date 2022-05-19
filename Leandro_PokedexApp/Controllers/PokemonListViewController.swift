@@ -35,6 +35,7 @@ class PokemonListViewController: UIViewController  {
         }
     }
     
+    // MARK: - Favorite Pokemon Methods
     
     @IBAction func pressedFavoritePokemonButton(_ sender: UIButton) {
 
@@ -66,6 +67,7 @@ class PokemonListViewController: UIViewController  {
     }
 
 }
+// MARK: - Table view methods
     extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource
 {
         
@@ -114,6 +116,8 @@ class PokemonListViewController: UIViewController  {
         }
     }
 
+// MARK: - Updating Pokemon List
+
 extension PokemonListViewController: PokemonManagerDelegate{
     func didUpdatePokemon(pokemon: PokemonModel) {
         DispatchQueue.main.async {
@@ -130,6 +134,7 @@ extension PokemonListViewController: PokemonManagerDelegate{
     }
 }
 
+// MARK: - UI Seearch Bar methods
 
 extension PokemonListViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
