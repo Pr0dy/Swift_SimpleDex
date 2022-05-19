@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D22AD9A2283552B800566073 /* LocalPokemonModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D22AD9A0283552B800566073 /* LocalPokemonModel.xcdatamodeld */; };
 		D27AE3B427DB626400A879C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27AE3B327DB626400A879C4 /* AppDelegate.swift */; };
 		D27AE3B627DB626400A879C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27AE3B527DB626400A879C4 /* SceneDelegate.swift */; };
 		D27AE3BB27DB626400A879C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27AE3B927DB626400A879C4 /* Main.storyboard */; };
@@ -22,13 +21,11 @@
 		D2C425A827E7DC3900A7F333 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C425A627E7DC3900A7F333 /* PokemonCell.swift */; };
 		D2C425A927E7DC3900A7F333 /* PokemonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C425A727E7DC3900A7F333 /* PokemonCell.xib */; };
 		D2D446EA27E762D6002ADAB3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D446E927E762D6002ADAB3 /* AppConstants.swift */; };
-		D2FE18372836AC1500EF9D87 /* LocalFavPokemon+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE18352836AC1500EF9D87 /* LocalFavPokemon+CoreDataClass.swift */; };
-		D2FE18382836AC1500EF9D87 /* LocalFavPokemon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE18362836AC1500EF9D87 /* LocalFavPokemon+CoreDataProperties.swift */; };
 		D2FE183B2836AD2000EF9D87 /* LocalDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE183A2836AD2000EF9D87 /* LocalDataMethods.swift */; };
+		D2FE183E2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2FE183C2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D22AD9A1283552B800566073 /* LocalPokemonModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalPokemonModel.xcdatamodel; sourceTree = "<group>"; };
 		D27AE3B027DB626400A879C4 /* Leandro_PokedexApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leandro_PokedexApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27AE3B327DB626400A879C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D27AE3B527DB626400A879C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,9 +42,8 @@
 		D2C425A627E7DC3900A7F333 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		D2C425A727E7DC3900A7F333 /* PokemonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonCell.xib; sourceTree = "<group>"; };
 		D2D446E927E762D6002ADAB3 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		D2FE18352836AC1500EF9D87 /* LocalFavPokemon+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalFavPokemon+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D2FE18362836AC1500EF9D87 /* LocalFavPokemon+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalFavPokemon+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D2FE183A2836AD2000EF9D87 /* LocalDataMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataMethods.swift; sourceTree = "<group>"; };
+		D2FE183D2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritePokemonList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,10 +131,8 @@
 		D2FE18392836AC6A00EF9D87 /* LocalDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				D22AD9A0283552B800566073 /* LocalPokemonModel.xcdatamodeld */,
-				D2FE18362836AC1500EF9D87 /* LocalFavPokemon+CoreDataProperties.swift */,
-				D2FE18352836AC1500EF9D87 /* LocalFavPokemon+CoreDataClass.swift */,
 				D2FE183A2836AD2000EF9D87 /* LocalDataMethods.swift */,
+				D2FE183C2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodeld */,
 			);
 			path = LocalDataModels;
 			sourceTree = "<group>";
@@ -218,14 +212,12 @@
 				D2FE183B2836AD2000EF9D87 /* LocalDataMethods.swift in Sources */,
 				D2D446EA27E762D6002ADAB3 /* AppConstants.swift in Sources */,
 				D2C425A427E777C500A7F333 /* PokemonData.swift in Sources */,
-				D22AD9A2283552B800566073 /* LocalPokemonModel.xcdatamodeld in Sources */,
 				D27AE3B427DB626400A879C4 /* AppDelegate.swift in Sources */,
 				D2C425A327E777C500A7F333 /* PokemonManager.swift in Sources */,
 				D2C425A527E777C500A7F333 /* PokemonModel.swift in Sources */,
+				D2FE183E2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodeld in Sources */,
 				D2AB50D127F6042C00D9C0D7 /* PokemonDetailScreenController.swift in Sources */,
-				D2FE18372836AC1500EF9D87 /* LocalFavPokemon+CoreDataClass.swift in Sources */,
 				D2C425A827E7DC3900A7F333 /* PokemonCell.swift in Sources */,
-				D2FE18382836AC1500EF9D87 /* LocalFavPokemon+CoreDataProperties.swift in Sources */,
 				D2A7755927E34CE300F3515B /* PokemonListViewController.swift in Sources */,
 				D2C11BB827FC7A4B00C791AA /* PokemonScreenDisplay.swift in Sources */,
 				D27AE3B627DB626400A879C4 /* SceneDelegate.swift in Sources */,
@@ -448,13 +440,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D22AD9A0283552B800566073 /* LocalPokemonModel.xcdatamodeld */ = {
+		D2FE183C2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D22AD9A1283552B800566073 /* LocalPokemonModel.xcdatamodel */,
+				D2FE183D2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodel */,
 			);
-			currentVersion = D22AD9A1283552B800566073 /* LocalPokemonModel.xcdatamodel */;
-			path = LocalPokemonModel.xcdatamodeld;
+			currentVersion = D2FE183D2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodel */;
+			path = FavoritePokemonList.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

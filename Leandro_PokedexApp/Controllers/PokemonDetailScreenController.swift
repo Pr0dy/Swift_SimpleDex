@@ -18,7 +18,10 @@ class PokemonDetailScreenController: UIViewController {
     var pokemon: PokemonModel?
     var statLabels: [UILabel]?
     var tableView: UITableView?
+    let localDataMethods = LocalDataMethods()
+    
     let dataContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +67,7 @@ class PokemonDetailScreenController: UIViewController {
         if pokemon!.isFavorite == false{
             pokemon!.isFavorite = true
             
-            
+            let favorites =
             
             favoriteButtonColor(isFavorite: true)
         } else {
