@@ -14,7 +14,7 @@ class PokemonListViewController: UIViewController  {
     var screenDisplayer = PokemonScreenDisplay()
     var searching = false
     var isFavoriteListDisplayed = false
-    var dataContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var dataContext = (UIApplication.shared.delegate as!    AppDelegate).persistentContainer.viewContext
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,22 +36,35 @@ class PokemonListViewController: UIViewController  {
         }
     }
     
-    // MARK: - Favorite Pokemon Search Methods
+    // MARK: - Favorite Search Methods
     
     @IBAction func pressedFavoritePokemonButton(_ sender: UIButton) {
 
         if isFavoriteListDisplayed == false{
             isFavoriteListDisplayed = true
             searching = true
-            
             var count = 1
             var searchResults = [Int:PokemonModel]()
             
-            for entry in Array(pokemonDictList.keys).sorted(by:<){
-                if pokemonDictList[entry]!.isFavorite{
-                    searchResults[count] = pokemonDictList[entry]
-                    count+=1
-                }
+            do{
+                let favorites = try dataContext.fetch(FavoritePokemon.fetchRequest())
+            
+                for entry in favorites{
+                    if pokemonDictList[Int(entry.number)] != nil{
+                        searchResults[count] = pokemonDictList[Int(entry.number)]
+                        pokemonDictList[Int(entry.number)]?.isFavorite = true
+                        count+=1
+                    } else {
+                        pokemonManager.fetchPokemon(number: Int(entry.number))
+                        searchResults[count] = pokemonDictList[Int(entry.number)]
+                        pokemonDictList[Int(entry.number)]?.isFavorite = true
+                        count+=1
+                    }
+                    
+            }
+                
+            } catch {
+                print(error)
             }
             
             filteredPokemonList = searchResults
@@ -95,23 +108,38 @@ class PokemonListViewController: UIViewController  {
          
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-            cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
+            do{
+            let favorites = try dataContext.fetch(FavoritePokemon.fetchRequest())
+                cellToDisplay = tableView.dequeueReusableCell(withIdentifier: appConstants.reusableCellIdentifier, for: indexPath) as? PokemonCell
 
-            cellToDisplay?.selectionStyle = .none
-            cellToDisplay?.starIconCell.image = nil
-            
-             if let pokemon = filteredPokemonList![indexPath.row+1]{
-                 screenDisplayer.displayPokemonInTableViewCell(pokemon: pokemon, tableViewCell: cellToDisplay)
-                 
-                 if pokemon.isFavorite{
-                    cellToDisplay?.starIconCell.image = UIImage(named: "starIcon")
+                cellToDisplay?.selectionStyle = .none
+                cellToDisplay?.starIconCell.image = nil
+                
+                 if let pokemon = filteredPokemonList![indexPath.row+1]{
+                     screenDisplayer.displayPokemonInTableViewCell(pokemon: pokemon, tableViewCell: cellToDisplay)
+                     
+                     for entry in favorites{
+                         if entry.number == pokemon.number{
+                             pokemon.isFavorite = true
+                         }
+                     }
+                     
+                     
+                     if pokemon.isFavorite{
+                        cellToDisplay?.starIconCell.image = UIImage(named: "starIcon")
+                     }
                  }
-             }
-             
                  
-            if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons && searching == false{
-                 performPokeRequest(lastLoadedPokemon: indexPath.row+1)
+                     
+                if indexPath.row+1 == (filteredPokemonList!.count) && indexPath.row+1 < appConstants.totalPokemons && searching == false{
+                     performPokeRequest(lastLoadedPokemon: indexPath.row+1)
+                }
+                
+                
+            } catch {
+                print(error)
             }
+            
                 
             return cellToDisplay!
         }

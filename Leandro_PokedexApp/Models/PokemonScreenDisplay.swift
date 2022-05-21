@@ -1,10 +1,3 @@
-//
-//  PokemonScreenDisplay.swift
-//  Leandro_PokedexApp
-//
-//  Created by leandro.banha on 05/04/2022.
-//
-
 import Foundation
 import UIKit
 

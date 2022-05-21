@@ -82,17 +82,18 @@ class PokemonDetailScreenController: UIViewController {
             favoriteButtonColor(isFavorite: false)
             
             do{
-                var favorites = try dataContext.fetch(FavoritePokemon.fetchRequest())
+                let favorites = try dataContext.fetch(FavoritePokemon.fetchRequest())
+                var count = 0
                 
-                let favoritePoke = FavoritePokemon(context: dataContext)
-                favoritePoke.number = Int64(pokemon!.number)
-                
-                while favorites.contains(favoritePoke){
-                    if let itemToRemoveIndex = favorites.firstIndex(of: favoritePoke){
-                        favorites.remove(at: itemToRemoveIndex)
+                for entry in favorites{
+                    if entry.number == Int(pokemon!.number){
+                        dataContext.delete(entry)
+                        break
                     }
+                    count+=1
                 }
                 
+                try dataContext.save()                
             }
             catch{
                 print(error)
