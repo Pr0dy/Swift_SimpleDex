@@ -14,6 +14,7 @@ class PokemonListViewController: UIViewController  {
     var screenDisplayer = PokemonScreenDisplay()
     var searching = false
     var isFavoriteListDisplayed = false
+    var dataContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
  
     override func viewDidLoad() {
         super.viewDidLoad()

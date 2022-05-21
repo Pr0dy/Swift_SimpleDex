@@ -66,13 +66,38 @@ class PokemonDetailScreenController: UIViewController {
     @IBAction func favoritePressed(_ sender: Any) {        
         if pokemon!.isFavorite == false{
             pokemon!.isFavorite = true
-            
-            let favorites =
+            do{
+                let favoritePoke = FavoritePokemon(context: dataContext)
+                favoritePoke.number = Int64(pokemon!.number)
+                
+                try dataContext.save()
+                                
+            } catch {
+                print(error)
+            }
             
             favoriteButtonColor(isFavorite: true)
         } else {
             pokemon!.isFavorite = false
             favoriteButtonColor(isFavorite: false)
+            
+            do{
+                var favorites = try dataContext.fetch(FavoritePokemon.fetchRequest())
+                
+                let favoritePoke = FavoritePokemon(context: dataContext)
+                favoritePoke.number = Int64(pokemon!.number)
+                
+                while favorites.contains(favoritePoke){
+                    if let itemToRemoveIndex = favorites.firstIndex(of: favoritePoke){
+                        favorites.remove(at: itemToRemoveIndex)
+                    }
+                }
+                
+            }
+            catch{
+                print(error)
+            }
+            
         }
         self.tableView?.reloadData()
     }
