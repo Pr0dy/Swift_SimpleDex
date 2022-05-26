@@ -18,7 +18,6 @@ class PokemonDetailScreenController: UIViewController {
     var pokemon: PokemonModel?
     var statLabels: [UILabel]?
     var tableView: UITableView?
-    let localDataMethods = LocalDataMethods()
     
     let dataContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 

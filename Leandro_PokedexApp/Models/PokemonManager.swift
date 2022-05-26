@@ -4,20 +4,18 @@ protocol PokemonManagerDelegate{
     func didFailWithError(error: Error)
     func didUpdatePokemon(pokemon: PokemonModel)
 }
-
+ 
 struct PokemonManager{
     
     var delegate: PokemonManagerDelegate?
-    var pokemonNum: Int?
     
-    mutating func fetchPokemon(number: Int){
+     func fetchPokemonURL(number: Int) -> String{
         let pokemonBaseURL = "\(AppConstants().pokemonBaseURL)\(number)"
-        pokemonNum = number
-        performRequest(with: pokemonBaseURL)
+        return pokemonBaseURL
     }
     
-    func performRequest(with urlString: String){
-        if let url = URL(string: urlString) {
+     func performRequest(number: Int){
+        if let url = URL(string: fetchPokemonURL(number: number)) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
@@ -42,9 +40,9 @@ struct PokemonManager{
             
             if decodedData.types.count > 1{
 
-                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!, pokeStats: decodedData.stats)
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: decodedData.id, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, secondaryPokemonType: decodedData.types[1].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!, pokeStats: decodedData.stats)
             } else {
-                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: pokemonNum ?? 0, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!,  pokeStats: decodedData.stats)
+                pokemon = PokemonModel(pokemonName: decodedData.name, pokemonNumber: decodedData.id, defaultSprite: decodedData.sprites.front_default, mainPokemonType: decodedData.types[0].type.name, height: decodedData.height, weight: decodedData.weight, shinySprite: decodedData.sprites.front_shiny!,  pokeStats: decodedData.stats)
             }
             
             return pokemon

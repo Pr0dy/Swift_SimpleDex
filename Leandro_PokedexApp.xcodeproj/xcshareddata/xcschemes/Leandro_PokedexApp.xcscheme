@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D28F62B8283F920400DEA9DD"
+               BuildableName = "Leandro_PokedexAppTests.xctest"
+               BlueprintName = "Leandro_PokedexAppTests"
+               ReferencedContainer = "container:Leandro_PokedexApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

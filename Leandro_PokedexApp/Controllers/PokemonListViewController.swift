@@ -23,6 +23,7 @@ class PokemonListViewController: UIViewController  {
         pokemonManager.delegate = self
         searchBar.delegate = self
         tableView.register(UINib(nibName: appConstants.reusableCellIdentifier, bundle: nil), forCellReuseIdentifier: appConstants.reusableCellIdentifier)
+        
         filteredPokemonList = pokemonDictList
         performPokeRequest(lastLoadedPokemon: 1)
     }
@@ -31,7 +32,7 @@ class PokemonListViewController: UIViewController  {
         let lastPokemonToLoad = lastLoadedPokemon + appConstants.pokemonScrollingIncrement
         for pokemonIndex in lastLoadedPokemon...lastPokemonToLoad{
             if pokemonIndex <= appConstants.totalPokemons{
-                pokemonManager.fetchPokemon(number: pokemonIndex)
+                pokemonManager.performRequest(number:  pokemonIndex)
             }
         }
     }
@@ -55,7 +56,7 @@ class PokemonListViewController: UIViewController  {
                         pokemonDictList[Int(entry.number)]?.isFavorite = true
                         count+=1
                     } else {
-                        pokemonManager.fetchPokemon(number: Int(entry.number))
+                        pokemonManager.performRequest(number: Int(entry.number))
                         searchResults[count] = pokemonDictList[Int(entry.number)]
                         pokemonDictList[Int(entry.number)]?.isFavorite = true
                         count+=1
@@ -124,7 +125,6 @@ class PokemonListViewController: UIViewController  {
                          }
                      }
                      
-                     
                      if pokemon.isFavorite{
                         cellToDisplay?.starIconCell.image = UIImage(named: "starIcon")
                      }
@@ -177,6 +177,7 @@ extension PokemonListViewController: UISearchBarDelegate{
         else{
             fetchSearchedPokemon(search: searchText)
         }
+        
         self.tableView.reloadData()
     }
     

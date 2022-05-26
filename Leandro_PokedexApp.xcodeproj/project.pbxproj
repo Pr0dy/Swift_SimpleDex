@@ -12,6 +12,7 @@
 		D27AE3BB27DB626400A879C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27AE3B927DB626400A879C4 /* Main.storyboard */; };
 		D27AE3BD27DB626500A879C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27AE3BC27DB626500A879C4 /* Assets.xcassets */; };
 		D27AE3C027DB626500A879C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27AE3BE27DB626500A879C4 /* LaunchScreen.storyboard */; };
+		D28F62C3283FA3AB00DEA9DD /* PokemonManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F62C2283FA3AB00DEA9DD /* PokemonManagerTests.swift */; };
 		D2A7755927E34CE300F3515B /* PokemonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A7755827E34CE300F3515B /* PokemonListViewController.swift */; };
 		D2AB50D127F6042C00D9C0D7 /* PokemonDetailScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB50D027F6042C00D9C0D7 /* PokemonDetailScreenController.swift */; };
 		D2C11BB827FC7A4B00C791AA /* PokemonScreenDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C11BB727FC7A4B00C791AA /* PokemonScreenDisplay.swift */; };
@@ -21,9 +22,18 @@
 		D2C425A827E7DC3900A7F333 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C425A627E7DC3900A7F333 /* PokemonCell.swift */; };
 		D2C425A927E7DC3900A7F333 /* PokemonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C425A727E7DC3900A7F333 /* PokemonCell.xib */; };
 		D2D446EA27E762D6002ADAB3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D446E927E762D6002ADAB3 /* AppConstants.swift */; };
-		D2FE183B2836AD2000EF9D87 /* LocalDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE183A2836AD2000EF9D87 /* LocalDataMethods.swift */; };
 		D2FE183E2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2FE183C2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodeld */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D28F62BD283F920400DEA9DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D27AE3A827DB626400A879C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D27AE3AF27DB626400A879C4;
+			remoteInfo = Leandro_PokedexApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D27AE3B027DB626400A879C4 /* Leandro_PokedexApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leandro_PokedexApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +43,8 @@
 		D27AE3BC27DB626500A879C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D27AE3BF27DB626500A879C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D27AE3C127DB626500A879C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28F62B9283F920400DEA9DD /* Leandro_PokedexAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Leandro_PokedexAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28F62C2283FA3AB00DEA9DD /* PokemonManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonManagerTests.swift; sourceTree = "<group>"; };
 		D2A7755827E34CE300F3515B /* PokemonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewController.swift; sourceTree = "<group>"; };
 		D2AB50D027F6042C00D9C0D7 /* PokemonDetailScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailScreenController.swift; sourceTree = "<group>"; };
 		D2C11BB727FC7A4B00C791AA /* PokemonScreenDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonScreenDisplay.swift; sourceTree = "<group>"; };
@@ -42,12 +54,18 @@
 		D2C425A627E7DC3900A7F333 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		D2C425A727E7DC3900A7F333 /* PokemonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonCell.xib; sourceTree = "<group>"; };
 		D2D446E927E762D6002ADAB3 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		D2FE183A2836AD2000EF9D87 /* LocalDataMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataMethods.swift; sourceTree = "<group>"; };
 		D2FE183D2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoritePokemonList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D27AE3AD27DB626400A879C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D28F62B6283F920400DEA9DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				D27AE3B227DB626400A879C4 /* Leandro_PokedexApp */,
+				D28F62BA283F920400DEA9DD /* Leandro_PokedexAppTests */,
 				D27AE3B127DB626400A879C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D27AE3B027DB626400A879C4 /* Leandro_PokedexApp.app */,
+				D28F62B9283F920400DEA9DD /* Leandro_PokedexAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +138,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D28F62BA283F920400DEA9DD /* Leandro_PokedexAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D28F62C2283FA3AB00DEA9DD /* PokemonManagerTests.swift */,
+			);
+			path = Leandro_PokedexAppTests;
+			sourceTree = "<group>";
+		};
 		D2D446EB27E762EE002ADAB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +159,6 @@
 		D2FE18392836AC6A00EF9D87 /* LocalDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				D2FE183A2836AD2000EF9D87 /* LocalDataMethods.swift */,
 				D2FE183C2836B2B100EF9D87 /* FavoritePokemonList.xcdatamodeld */,
 			);
 			path = LocalDataModels;
@@ -157,6 +184,24 @@
 			productReference = D27AE3B027DB626400A879C4 /* Leandro_PokedexApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D28F62B8283F920400DEA9DD /* Leandro_PokedexAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D28F62BF283F920400DEA9DD /* Build configuration list for PBXNativeTarget "Leandro_PokedexAppTests" */;
+			buildPhases = (
+				D28F62B5283F920400DEA9DD /* Sources */,
+				D28F62B6283F920400DEA9DD /* Frameworks */,
+				D28F62B7283F920400DEA9DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D28F62BE283F920400DEA9DD /* PBXTargetDependency */,
+			);
+			name = Leandro_PokedexAppTests;
+			productName = Leandro_PokedexAppTests;
+			productReference = D28F62B9283F920400DEA9DD /* Leandro_PokedexAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -169,6 +214,11 @@
 				TargetAttributes = {
 					D27AE3AF27DB626400A879C4 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					D28F62B8283F920400DEA9DD = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
+						TestTargetID = D27AE3AF27DB626400A879C4;
 					};
 				};
 			};
@@ -186,6 +236,7 @@
 			projectRoot = "";
 			targets = (
 				D27AE3AF27DB626400A879C4 /* Leandro_PokedexApp */,
+				D28F62B8283F920400DEA9DD /* Leandro_PokedexAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +253,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D28F62B7283F920400DEA9DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -209,7 +267,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FE183B2836AD2000EF9D87 /* LocalDataMethods.swift in Sources */,
 				D2D446EA27E762D6002ADAB3 /* AppConstants.swift in Sources */,
 				D2C425A427E777C500A7F333 /* PokemonData.swift in Sources */,
 				D27AE3B427DB626400A879C4 /* AppDelegate.swift in Sources */,
@@ -224,7 +281,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D28F62B5283F920400DEA9DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28F62C3283FA3AB00DEA9DD /* PokemonManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D28F62BE283F920400DEA9DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D27AE3AF27DB626400A879C4 /* Leandro_PokedexApp */;
+			targetProxy = D28F62BD283F920400DEA9DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D27AE3B927DB626400A879C4 /* Main.storyboard */ = {
@@ -416,6 +489,55 @@
 			};
 			name = Release;
 		};
+		D28F62C0283F920400DEA9DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W375Q6GZ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.leandro.banha.Leandro-PokedexAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leandro_PokedexApp.app/Leandro_PokedexApp";
+			};
+			name = Debug;
+		};
+		D28F62C1283F920400DEA9DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W375Q6GZ6;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.leandro.banha.Leandro-PokedexAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leandro_PokedexApp.app/Leandro_PokedexApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -433,6 +555,15 @@
 			buildConfigurations = (
 				D27AE3C527DB626500A879C4 /* Debug */,
 				D27AE3C627DB626500A879C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D28F62BF283F920400DEA9DD /* Build configuration list for PBXNativeTarget "Leandro_PokedexAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D28F62C0283F920400DEA9DD /* Debug */,
+				D28F62C1283F920400DEA9DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
