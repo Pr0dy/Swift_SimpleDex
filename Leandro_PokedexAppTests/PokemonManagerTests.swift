@@ -16,11 +16,8 @@ class PokemonManagerTests: XCTestCase {
     }
     
     func test_fetch_pokemon_url(){
-        
         let expectedURL = "https://pokeapi.co/api/v2/pokemon/1"
-        
         let actualURL = sut.fetchPokemonURL(number: 1)
-        
         XCTAssertEqual(expectedURL, actualURL)
     }
 

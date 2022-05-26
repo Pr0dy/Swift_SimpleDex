@@ -50,19 +50,13 @@ class PokemonListViewController: UIViewController  {
             do{
                 let favorites = try dataContext.fetch(FavoritePokemon.fetchRequest())
             
-                for entry in favorites{
+                for entry in favorites.sorted(by: {$0.number < $1.number}){
                     if pokemonDictList[Int(entry.number)] != nil{
                         searchResults[count] = pokemonDictList[Int(entry.number)]
                         pokemonDictList[Int(entry.number)]?.isFavorite = true
                         count+=1
-                    } else {
-                        pokemonManager.performRequest(number: Int(entry.number))
-                        searchResults[count] = pokemonDictList[Int(entry.number)]
-                        pokemonDictList[Int(entry.number)]?.isFavorite = true
-                        count+=1
-                    }
-                    
             }
+                }
                 
             } catch {
                 print(error)
