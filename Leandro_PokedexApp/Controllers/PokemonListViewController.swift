@@ -11,7 +11,6 @@ class PokemonListViewController: UIViewController  {
     var pokemonDictList = [Int:PokemonModel]()
     var filteredPokemonList: [Int:PokemonModel]?
     var pokemonDetails: PokemonModel?
-    var screenDisplayer = PokemonScreenDisplay()
     var searching = false
     var isFavoriteListDisplayed = false
     var dataContext = (UIApplication.shared.delegate as!    AppDelegate).persistentContainer.viewContext
@@ -111,7 +110,7 @@ class PokemonListViewController: UIViewController  {
                 cellToDisplay?.starIconCell.image = nil
                 
                  if let pokemon = filteredPokemonList![indexPath.row+1]{
-                     screenDisplayer.displayPokemonInTableViewCell(pokemon: pokemon, tableViewCell: cellToDisplay)
+                     displayPokemonInTableViewCell(pokemon: pokemon, tableViewCell: cellToDisplay)
                      
                      for entry in favorites{
                          if entry.number == pokemon.number{
@@ -137,6 +136,21 @@ class PokemonListViewController: UIViewController  {
                 
             return cellToDisplay!
         }
+        
+        func displayPokemonInTableViewCell(pokemon: PokemonModel, tableViewCell: PokemonCell?){
+            tableViewCell?.pokemonName.text = pokemon.getPokemonName()
+            tableViewCell?.pokemonNumber.text = "#\(pokemon.number)"
+            tableViewCell?.pokemonImage.image = pokemon.getSpriteImg(spriteURL: pokemon.defaultSprite)
+            tableViewCell?.backgroundColor = pokemon.typeColor
+            tableViewCell?.pokemonTypeImg1.image = pokemon.getCellPokemonTypeIcon(pokemonType: pokemon.mainPokemonType)
+            tableViewCell?.pokemonTypeImg2.image = nil
+            
+            if let secondaryType = pokemon.secondaryPokemonType{
+                tableViewCell?.pokemonTypeImg2.image = pokemon.getCellPokemonTypeIcon(pokemonType:secondaryType)
+            }
+        }
+
+        
     }
 
 // MARK: - Updating Pokemon List
