@@ -16,6 +16,7 @@ class PokemonDetailScreenController: UIViewController {
     @IBOutlet weak var pokemonHeight: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     var pokemon: PokemonModel?
+    var appConstants = AppConstants()
     var statLabels: [UILabel]?
     var tableView: UITableView?
     
@@ -112,12 +113,12 @@ class PokemonDetailScreenController: UIViewController {
 
     @IBAction func pressedShinyButton(_ sender: UIButton) {
         
-        if sender.currentTitle == "Shinny"{
+        if sender.currentTitle == appConstants.shinyTitleSet {
             pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.defaultSprite)
-            sender.setTitle("Normal", for: .normal)
+            sender.setTitle(appConstants.normaTitleSet, for: .normal)
         } else {
             pokemonSpriteImage.image = pokemon!.getSpriteImg(spriteURL: pokemon!.shinySprite)
-            sender.setTitle("Shinny", for: .normal)
+            sender.setTitle(appConstants.shinyTitleSet, for: .normal)
         }
     }
     

@@ -119,7 +119,7 @@ class PokemonListViewController: UIViewController  {
                      }
                      
                      if pokemon.isFavorite{
-                        cellToDisplay?.starIconCell.image = UIImage(named: "starIcon")
+                         cellToDisplay?.starIconCell.image = UIImage(named: appConstants.startIconLabel)
                      }
                  }
                  

@@ -12,10 +12,8 @@
 		D27AE3BB27DB626400A879C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27AE3B927DB626400A879C4 /* Main.storyboard */; };
 		D27AE3BD27DB626500A879C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27AE3BC27DB626500A879C4 /* Assets.xcassets */; };
 		D27AE3C027DB626500A879C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27AE3BE27DB626500A879C4 /* LaunchScreen.storyboard */; };
-		D28F62C3283FA3AB00DEA9DD /* PokemonManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28F62C2283FA3AB00DEA9DD /* PokemonManagerTests.swift */; };
 		D2A7755927E34CE300F3515B /* PokemonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A7755827E34CE300F3515B /* PokemonListViewController.swift */; };
 		D2AB50D127F6042C00D9C0D7 /* PokemonDetailScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB50D027F6042C00D9C0D7 /* PokemonDetailScreenController.swift */; };
-		D2C11BB827FC7A4B00C791AA /* PokemonScreenDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C11BB727FC7A4B00C791AA /* PokemonScreenDisplay.swift */; };
 		D2C425A327E777C500A7F333 /* PokemonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C425A027E777C500A7F333 /* PokemonManager.swift */; };
 		D2C425A427E777C500A7F333 /* PokemonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C425A127E777C500A7F333 /* PokemonData.swift */; };
 		D2C425A527E777C500A7F333 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C425A227E777C500A7F333 /* PokemonModel.swift */; };
@@ -44,10 +42,8 @@
 		D27AE3BF27DB626500A879C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D27AE3C127DB626500A879C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D28F62B9283F920400DEA9DD /* Leandro_PokedexAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Leandro_PokedexAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D28F62C2283FA3AB00DEA9DD /* PokemonManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonManagerTests.swift; sourceTree = "<group>"; };
 		D2A7755827E34CE300F3515B /* PokemonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewController.swift; sourceTree = "<group>"; };
 		D2AB50D027F6042C00D9C0D7 /* PokemonDetailScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailScreenController.swift; sourceTree = "<group>"; };
-		D2C11BB727FC7A4B00C791AA /* PokemonScreenDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonScreenDisplay.swift; sourceTree = "<group>"; };
 		D2C425A027E777C500A7F333 /* PokemonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonManager.swift; sourceTree = "<group>"; };
 		D2C425A127E777C500A7F333 /* PokemonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonData.swift; sourceTree = "<group>"; };
 		D2C425A227E777C500A7F333 /* PokemonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
@@ -79,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				D27AE3B227DB626400A879C4 /* Leandro_PokedexApp */,
-				D28F62BA283F920400DEA9DD /* Leandro_PokedexAppTests */,
 				D27AE3B127DB626400A879C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,18 +127,9 @@
 				D2C425A127E777C500A7F333 /* PokemonData.swift */,
 				D2C425A027E777C500A7F333 /* PokemonManager.swift */,
 				D2C425A227E777C500A7F333 /* PokemonModel.swift */,
-				D2C11BB727FC7A4B00C791AA /* PokemonScreenDisplay.swift */,
 				D2FE18392836AC6A00EF9D87 /* LocalDataModels */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D28F62BA283F920400DEA9DD /* Leandro_PokedexAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				D28F62C2283FA3AB00DEA9DD /* PokemonManagerTests.swift */,
-			);
-			path = Leandro_PokedexAppTests;
 			sourceTree = "<group>";
 		};
 		D2D446EB27E762EE002ADAB3 /* Supporting Files */ = {
@@ -276,7 +262,6 @@
 				D2AB50D127F6042C00D9C0D7 /* PokemonDetailScreenController.swift in Sources */,
 				D2C425A827E7DC3900A7F333 /* PokemonCell.swift in Sources */,
 				D2A7755927E34CE300F3515B /* PokemonListViewController.swift in Sources */,
-				D2C11BB827FC7A4B00C791AA /* PokemonScreenDisplay.swift in Sources */,
 				D27AE3B627DB626400A879C4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D28F62C3283FA3AB00DEA9DD /* PokemonManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
